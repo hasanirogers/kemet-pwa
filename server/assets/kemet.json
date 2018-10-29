@@ -1,0 +1,24 @@
+{
+    "templates": [
+        {
+            "slug": "agency",
+            "header": "Agency",
+            "desc": "Bring your work to the forefront with this sleek template that's perfect for agencies or freelancers."
+        },
+        {
+            "slug": "ecommerce",
+            "header": "Ecommerce Homepage",
+            "desc": "Building an online store? You'll appreciate this template."
+        },
+        {
+            "slug": "news",
+            "header": "News or Magazine",
+            "desc": "This template puts a focus on bold images, perfect for a magazine style site with eye catching content. Your stories are easy to find with large feature blocks."
+        },
+        {
+            "slug": "travel",
+            "header": "Real Estate or Travel",
+            "desc": "Big thumbnails with a space for captions and descriptions along with an informative header make this the perfect template for real estate or hotel booking."
+        }
+    ]
+}

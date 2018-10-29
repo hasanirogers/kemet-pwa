@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    font-size: 16px;
+    font-family: 'PT Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    color: #0060ff;
+    text-decoration: none;
+}
+
+.wrapper {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.wrapper--page {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.wrapper--full {
+    background-color:#eee;
+}
