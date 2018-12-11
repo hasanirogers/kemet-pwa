@@ -78,6 +78,20 @@ class ViewUtilities extends PageViewElement {
           <div><code class="text-minus-2">.text-minus-2</code></div>
           <div><code class="text-minus-3">.text-minus-3</code></div>
         </div>
+
+        <h3>Spacer classes</h3>
+        <p>Kemet comes with a number of responsive margin classes for you to control spacing. The syntax is <code>margin-[breakpoint]-[size]-[side]</code> where side (top,left,bottom,right) is optional.</p>
+
+        <div class="margin-tiny-largest-left">
+          <div>This will have a left margin of largest for all breakpoints.</div>
+          <code>.margin-tiny-largest-left</code>
+        </div>
+
+        <div class="margin-small-normal margin-medium-none margin-large-largest">
+          <div>This will have responsive margins of normal at small, none at medium, and large at largest.</div>
+          <code>.margin-small-normal margin-medium-none margin-large-largest</code>
+        </div>
+        <p>Note that in Kemet's default config these classes are turned off. Set <code>$makespacers</code> to true if you need them.</p>
       </section>
     `;
   }

@@ -54,7 +54,10 @@ class ViewSass extends PageViewElement {
         <p>Use of <code>$flexgridcolumn</code> is specifically for using <code>basis</code> with flexgrid. It simply sets the number of columns. Default is 12.</p>
 
         <h2>Type Sizers</h2>
-        <p>Similar to <code>$gutters</code>, <code>$typesizers</code> allows you to control how sizing for the type utility. The defaults are the same as gutters but can be customized in the same fashion as well.</p>
+        <p>Similar to <code>$gutters</code>, <code>$typesizers</code> allows you to control how sizing for the type utility. The defaults are similar to gutters but can be customized in the same fashion as well.</p>
+
+        <h2>Spacers</h2>
+        <p>Controls the amount of spacing used for margin helper classes.</p>
 
         <h2>Make Order</h2>
         <p>If you want to reduce file size and don't need the order attribute, set <code>$makeorder</code> to false.
@@ -64,6 +67,9 @@ class ViewSass extends PageViewElement {
 
         <h2>Make Text</h2>
         <p>If you want to reduce file size and don't need text helper classes, set <code>$maketext</code> to false.
+
+        <h2>Make Spacers</h2>
+        <p>If you're not concerned about increasing file size and want responsive margin classes, set <code>$makespacers</code> to true.</p>
       </section>
     `;
   }
