@@ -14,10 +14,11 @@ class SampleConfigGutters extends LitElement {
   render() {
     return html`
       <syntax-highlight theme="hybrid" lang="sass">$gutters: (
+    none: 0,
     smallest: 4px,
     smaller: 8px,
     small: 12px,
-    zero: 16px, // do not remove this
+    default: 16px, // do not remove this
     large: 20px,
     larger: 24px,
     largest: 28px,

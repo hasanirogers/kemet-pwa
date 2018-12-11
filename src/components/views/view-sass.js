@@ -28,7 +28,7 @@ class ViewSass extends PageViewElement {
         <h2>Gutters</h2>
         <p>You can control how gutters behave with the <code>$gutters</code> variables. <code>$gutters</code> is a sass map. You can change the values for the map. For example you might want to use <code>px</code> instead of <code>rem</code> for the units on the gutters. You can also change how gutters are refrenced by chaning the map's key. So instead of <code>minus-1</code> you might want to change it to simply <code>small</code>. Kemet is smart enough to loop through the map so you can also add or remove any key value you pairs as you wish. Here's an example of a custom <code>$gutters</code> config.</p>
         <sample-config-gutters></sample-config-gutters>
-        <p>In the example above we changed the keys, values, and number of entries in the map to our custom needs. The only rule is do not remove zero, Kemet uses it as a base.</p>
+        <p>In the example above we changed the keys, values, and number of entries in the map to our custom needs. The only rule is do not remove default.</p>
 
         <h2>Flexiplier</h2>
         <p>The <code>$flexiplier</code> controls increments of spacing. The default is tens. You may also use fives or twenties. So for example, if you set it to five you can use increments of 5 in your breakpoints.<p>
