@@ -21,15 +21,15 @@ class SampleFlexlayout3 extends LitElement {
       ${StylesShared}
       <figure>
         <figcaption>
-          <p>You can add <code>plus-n</code> or <code>minus-n</code> to gutters where <em>n</em> is a configured multiple of default spacing. Use this to control the amount of spacing for the gutters.</p>
+          <p>You can add responsive gutters. The syntax is <code>[breakpoint]-[gutter-value]</code>. So for example, if you wanted the default value for gutters for all breakpoints use <code>tiny-default</code>. Remember, Kemet is mobile first so using tiny means "tiny and up."</p>
         </figcaption>
-          <div layout="flexrow" gutters="plus-6">
+          <div layout="flexrow" gutters="tiny-none medium-default large-plus-6">
               <div breakpoint="medium-33"><span class="box">Item 1</span></div>
               <div><span class="box">Item 2</span></div>
               <div><span class="box">Item 3</span></div>
               <div><span class="box">Item 4</span></div>
           </div>
-          <syntax-highlight theme="hybrid"><div layout="flexrow" gutters="plus-6">
+          <syntax-highlight theme="hybrid"><div layout="flexrow" gutters="tiny-none medium-default large-plus-6">
     <div breakpoint="medium-33"><span class="box">Item 1</span></div>
     <div><span class="box">Item 2</span></div>
     <div><span class="box">Item 3</span></div>
