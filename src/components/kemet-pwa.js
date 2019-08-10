@@ -42,8 +42,8 @@ class KemetPWA extends LitElement {
         <button class="menu-btn" title="Menu" @click="${_ => this._updateDrawerState(true)}">${menuIcon}</button>
         <div>
           ${anubis}
-          <h1 main-title>Kemet</h1>
-          <p>The most advanced flex-based layout system on the web.</p>
+          <h1 main-title>Kemet CSS</h1>
+          <p>Kemet CSS is not a CSS framework. It is the most powerful flexbox layout library on the web.</p>
         </div>
       </app-toolbar>
 
