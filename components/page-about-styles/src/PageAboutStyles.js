@@ -1,6 +1,6 @@
 import { html, css, LitElement } from 'lit-element';
 
-export class PageMain extends LitElement {
+export class PageAboutStyles extends LitElement {
   static get styles() {
     return css`
       :host {
@@ -39,17 +39,7 @@ export class PageMain extends LitElement {
 
   render() {
     return html`
-      ${this.logo}
-      <h1>${this.title}</h1>
-      <p>Edit <code>src/MyApp.js</code> and save to reload.</p>
-      <a
-        class="app-link"
-        href="https://open-wc.org/developing/#examples"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Code examples
-      </a>
+      <h1>About styles</h1>
     `;
   }
 }
