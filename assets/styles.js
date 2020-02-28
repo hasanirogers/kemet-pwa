@@ -11,11 +11,23 @@ export const stylesBase = css`
     cursor: pointer;
   }
 
+  a:visited {
+    color: inherit;
+    text-decoration: none;
+  }
+
   p {
     margin-bottom: 1rem;
   }
 
   pre {
     margin: 0;
+  }
+`;
+
+export const stylesKemetDrawer = css`
+  kemet-drawer {
+    --kemet-drawer-width: var(--app-drawer-width);
+    --kemet-drawer-background: var(--app-primary-color);
   }
 `;

@@ -19,10 +19,10 @@ export class KemetNav extends LitElement {
       stylesBase,
       css`
         section {
+          width: 100%;
           display: inline-block;
           height: 100vh;
           position: fixed;
-          border-right: 1px solid var(--app-black-25);
         }
 
         h2 {
@@ -31,6 +31,11 @@ export class KemetNav extends LitElement {
 
         a {
           font-size: 0.8rem;
+          transition: color 300ms ease;
+        }
+
+        a:hover {
+          color: var(--app-secondary-color);
         }
 
         ul {
@@ -40,18 +45,42 @@ export class KemetNav extends LitElement {
 
         li {
           list-style: none;
-          margin: 0.5rem 0;
+          padding-top: 0.5rem;
+          padding-bottom: 0.5rem;
         }
 
         h1,
         h2,
         li {
-          padding: 0 6rem 0 2rem;
+          padding-right: 6rem;
+          padding-left: 2rem;
+        }
+
+        .active {
+          background: var(--app-black-25);
         }
 
         :host([content]),
         :host([content][page='introduction']) {
           display: none;
+        }
+
+        :host([content]) section {
+          width: auto;
+          border-right: 1px solid var(--app-black-25);
+        }
+
+        :host([content]) a:hover {
+          color: var(--app-black);
+        }
+
+        :host([content]) .active {
+          border-right: 3px solid var(--app-primary-color);
+          background: transparent;
+        }
+
+        :host([content]) .active::before {
+          content: '—';
         }
 
         @media screen and (min-width: 768px) {
@@ -70,7 +99,7 @@ export class KemetNav extends LitElement {
   }
 
   firstUpdated() {
-    // this.drawer = document.querySelector('kemet-drawer');
+    this.drawer = document.querySelector('kemet-pwa').shadowRoot.querySelector('kemet-drawer');
   }
 
   render() {
@@ -90,10 +119,10 @@ export class KemetNav extends LitElement {
 
         <h2>Styles</h2>
         <ul>
-          <li class="${this.page === 'about-styles' ? 'active' : ''}">
+          <li class="${this.page === 'styles' ? 'active' : ''}">
             <a
               @click=${() => {
-                this.switchRoute('about-styles');
+                this.switchRoute('styles');
               }}
               >About</a
             >
@@ -134,16 +163,36 @@ export class KemetNav extends LitElement {
             <a>About</a>
           </li>
           <li>
-            <a>Agency</a>
+            <a
+              href="https://kemet-templates.stackblitz.io/agency.html"
+              target="_blank"
+              style="text-decoration:none;"
+              >Agency</a
+            >
           </li>
           <li>
-            <a>Ecommerce</a>
+            <a
+              href="https://kemet-templates.stackblitz.io/ecommerce.html"
+              target="_blank"
+              style="text-decoration:none;"
+              >Ecommerce</a
+            >
           </li>
           <li>
-            <a>News</a>
+            <a
+              href="https://kemet-templates.stackblitz.io/news.html"
+              target="_blank"
+              style="text-decoration:none;"
+              >News</a
+            >
           </li>
           <li>
-            <a>Travel</a>
+            <a
+              href="https://kemet-templates.stackblitz.io/travel.html"
+              target="_blank"
+              style="text-decoration:none;"
+              >Travel</a
+            >
           </li>
         </ul>
       </section>
