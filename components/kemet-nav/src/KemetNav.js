@@ -108,24 +108,14 @@ export class KemetNav extends LitElement {
         <h1>Kemet</h1>
         <ul>
           <li class="${this.page === 'introduction' ? 'active' : ''}">
-            <a
-              @click=${() => {
-                this.switchRoute('introduction');
-              }}
-              >Introduction</a
-            >
+            <a @click=${() => {this.switchRoute('introduction');}}>Introduction</a>
           </li>
         </ul>
 
         <h2>Styles</h2>
         <ul>
           <li class="${this.page === 'styles' ? 'active' : ''}">
-            <a
-              @click=${() => {
-                this.switchRoute('styles');
-              }}
-              >About</a
-            >
+            <a @click=${() => { this.switchRoute('styles');}}>About</a>
           </li>
           <li>
             <a>Layout</a>
