@@ -3,6 +3,7 @@
 import { html, css, LitElement } from 'lit-element';
 import { Router } from '@vaadin/router';
 import { stylesBase } from '../../../assets/styles.js';
+import { svgAnubis } from '../../../assets/svg.js';
 
 export class KemetNav extends LitElement {
   static get properties() {
@@ -23,6 +24,22 @@ export class KemetNav extends LitElement {
           display: inline-block;
           height: 100vh;
           position: fixed;
+        }
+
+        h1 {
+          display: flex;
+          align-items: center;
+        }
+
+        h1 svg {
+          width: 48px;
+          height: 48px;
+          fill: var(--app-white-rich);
+        }
+
+        h1 span {
+          position: relative;
+          top: 8px;
         }
 
         h2 {
@@ -74,6 +91,10 @@ export class KemetNav extends LitElement {
           color: var(--app-black);
         }
 
+        :host([content]) h1 svg {
+          fill: var(--app-primary-color);
+        }
+
         :host([content]) .active {
           border-right: 3px solid var(--app-primary-color);
           background: transparent;
@@ -96,6 +117,8 @@ export class KemetNav extends LitElement {
     super();
 
     this.page = location.pathname === '/' ? 'introduction' : location.pathname.replace('/', '');
+    document.addEventListener('switched-route', this.handleSwitchRoute.bind(this));
+
   }
 
   firstUpdated() {
@@ -105,7 +128,10 @@ export class KemetNav extends LitElement {
   render() {
     return html`
       <section>
-        <h1>Kemet</h1>
+        <h1>
+          ${svgAnubis}
+          <span>Kemet</span>
+        </h1>
         <ul>
           <li class="${this.page === 'introduction' ? 'active' : ''}">
             <a @click=${() => {this.switchRoute('introduction');}}>Introduction</a>
@@ -130,6 +156,9 @@ export class KemetNav extends LitElement {
 
         <h2>Components</h2>
         <ul>
+          <li>
+            <a>About</a>
+          </li>
           <li>
             <a>Drawer</a>
           </li>
@@ -156,33 +185,33 @@ export class KemetNav extends LitElement {
             <a
               href="https://kemet-templates.stackblitz.io/agency.html"
               target="_blank"
-              style="text-decoration:none;"
-              >Agency</a
-            >
+              style="text-decoration:none;">
+              Agency
+            </a>
           </li>
           <li>
             <a
               href="https://kemet-templates.stackblitz.io/ecommerce.html"
               target="_blank"
-              style="text-decoration:none;"
-              >Ecommerce</a
-            >
+              style="text-decoration:none;">
+              Ecommerce
+            </a>
           </li>
           <li>
             <a
               href="https://kemet-templates.stackblitz.io/news.html"
               target="_blank"
-              style="text-decoration:none;"
-              >News</a
-            >
+              style="text-decoration:none;">
+              News
+            </a>
           </li>
           <li>
             <a
               href="https://kemet-templates.stackblitz.io/travel.html"
               target="_blank"
-              style="text-decoration:none;"
-              >Travel</a
-            >
+              style="text-decoration:none;">
+              Travel
+            </a>
           </li>
         </ul>
       </section>
@@ -193,5 +222,9 @@ export class KemetNav extends LitElement {
     this.page = route;
     Router.go(`/${route}`);
     this.drawer.close();
+  }
+
+  handleSwitchRoute(event) {
+    this.page = event.detail;
   }
 }

@@ -26,6 +26,26 @@ export class KemetPwa extends LitElement {
           height: 32px;
         }
 
+        /*
+        [data-outlet] > .leaving {
+          animation: 1s fadeOut ease-in-out;
+        }
+
+        [data-outlet] > .entering {
+          animation: 1s fadeIn linear;
+        }
+
+        @keyframes fadeOut {
+          from {opacity: 1;}
+          to {opacity: 0;}
+        }
+
+        @keyframes fadeIn {
+          from {opacity: 0;}
+          to {opacity: 1;}
+        }
+        */
+
         @media screen and (min-width: 768px) {
           .hamburger {
             display: none;
@@ -39,12 +59,23 @@ export class KemetPwa extends LitElement {
     this.drawer = this.shadowRoot.querySelector('kemet-drawer');
     const router = new Router(this.shadowRoot.querySelector('[data-outlet]'));
 
-    router.setRoutes([
-      { path: '/', component: 'page-intro' },
-      { path: '/introduction', component: 'page-intro' },
-      { path: '/styles', component: 'page-styles' },
-      { path: '(.*)', redirect: '/' },
-    ]);
+    // router.setRoutes([
+    //   { path: '/', component: 'page-intro' },
+    //   { path: '/introduction', component: 'page-intro' },
+    //   { path: '/styles', component: 'page-styles' },
+    //   { path: '(.*)', redirect: '/' },
+    // ]);
+
+    router.setRoutes([{
+      path: '/',
+      animate: true,
+      children: [
+        { path: '/', component: 'page-intro' },
+        { path: '/introduction', component: 'page-intro' },
+        { path: '/styles', component: 'page-styles' },
+        { path: '(.*)', redirect: '/' },
+      ]
+    }]);
   }
 
   render() {
