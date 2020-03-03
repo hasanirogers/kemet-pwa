@@ -20,8 +20,46 @@ export const stylesBase = css`
     margin-bottom: 1rem;
   }
 
+  h1 {
+    font-size: 2rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    article h1 {
+      margin-top: 0;
+    }
+  }
+
   pre {
-    margin: 0;
+    margin-top: 1rem;
+    overflow: auto;
+  }
+
+  code {
+    display: inline-block;
+  }
+
+  pre code {
+    padding: 1rem !important;
+  }
+
+  figure {
+    margin: 0 0 1rem 0;
+    padding: 1rem;
+    border: 1px solid var(--app-black-25);
+  }
+
+  .box {
+    width: 100%;
+    background: var(--app-primary-color);
+    display: block;
+    color: var(--app-white-rich);
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  [layout*="flexcolumn"] .box {
+    height: 100%;
   }
 `;
 

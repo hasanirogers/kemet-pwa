@@ -9,6 +9,7 @@ import '@kemet/kemet-drawer/kemet-drawer';
 import '../../kemet-nav/kemet-nav.js';
 import '../../page-intro/page-intro.js';
 import '../../page-styles/page-styles.js';
+import '../../page-layout/page-layout.js';
 
 export class KemetPwa extends LitElement {
   static get styles() {
@@ -18,6 +19,8 @@ export class KemetPwa extends LitElement {
       css`
         .hamburger {
           display: block;
+          position: fixed;
+          top: 0;
           margin: 0.5rem;
         }
 
@@ -73,6 +76,7 @@ export class KemetPwa extends LitElement {
         { path: '/', component: 'page-intro' },
         { path: '/introduction', component: 'page-intro' },
         { path: '/styles', component: 'page-styles' },
+        { path: '/layout', component: 'page-layout' },
         { path: '(.*)', redirect: '/' },
       ]
     }]);
@@ -88,10 +92,11 @@ export class KemetPwa extends LitElement {
           <a class="hamburger" @click=${this.toggleDrawer}>
             ${svgHamburger}
           </a>
-          <kemet-nav content></kemet-nav>
+
           <main data-outlet></main>
         </section>
       </kemet-drawer>
+      <kemet-nav content></kemet-nav>
     `;
   }
 

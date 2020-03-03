@@ -24,9 +24,13 @@ export class KemetNav extends LitElement {
           display: inline-block;
           height: 100vh;
           position: fixed;
+          top: 0;
+          left: 0;
+          overflow-y: auto;
         }
 
         h1 {
+          cursor: pointer;
           display: flex;
           align-items: center;
         }
@@ -92,7 +96,7 @@ export class KemetNav extends LitElement {
         }
 
         :host([content]) h1 svg {
-          fill: var(--app-primary-color);
+          fill: var(--app-primary-color-75);
         }
 
         :host([content]) .active {
@@ -128,90 +132,65 @@ export class KemetNav extends LitElement {
   render() {
     return html`
       <section>
-        <h1>
+        <h1 @click=${() => { this.switchRoute('introduction'); }}>
           ${svgAnubis}
           <span>Kemet</span>
         </h1>
-        <ul>
-          <li class="${this.page === 'introduction' ? 'active' : ''}">
-            <a @click=${() => {this.switchRoute('introduction');}}>Introduction</a>
-          </li>
-        </ul>
 
         <h2>Styles</h2>
         <ul>
           <li class="${this.page === 'styles' ? 'active' : ''}">
-            <a @click=${() => { this.switchRoute('styles');}}>About</a>
+            <a @click=${() => { this.switchRoute('styles'); }}>About</a>
           </li>
-          <li>
-            <a>Layout</a>
+          <li class="${this.page === 'layout' ? 'active' : ''}">
+            <a @click=${() => { this.switchRoute('layout'); }}>Layout</a>
           </li>
-          <li>
-            <a>Utilities</a>
+          <li class="${this.page === 'utilities' ? 'active' : ''}">
+            <a @click=${() => { this.switchRoute('utilities'); }}>Utilities</a>
           </li>
-          <li>
-            <a>Sass</a>
+          <li class="${this.page === 'sass' ? 'active' : ''}">
+            <a @click=${() => { this.switchRoute('sass'); }}>Sass</a>
           </li>
         </ul>
 
         <h2>Components</h2>
         <ul>
-          <li>
-            <a>About</a>
+          <li class="${this.page === 'components' ? 'active' : ''}">
+            <a @click=${() => { this.switchRoute('components'); }}>About</a>
           </li>
-          <li>
-            <a>Drawer</a>
+          <li class="${this.page === 'drawer' ? 'active' : ''}">
+            <a @click=${() => { this.switchRoute('drawer'); }}>Drawer</a>
           </li>
-          <li>
-            <a>Tabs</a>
+          <li class="${this.page === 'tabs' ? 'active' : ''}">
+            <a @click=${() => { this.switchRoute('tabs'); }}>Tabs</a>
           </li>
-          <li>
-            <a>Accordion</a>
+          <li class="${this.page === 'accordion' ? 'active' : ''}">
+            <a @click=${() => { this.switchRoute('accordion'); }}>Accordion</a>
           </li>
-          <li>
-            <a>Modal</a>
+          <li class="${this.page === 'modal' ? 'active' : ''}">
+            <a @click=${() => { this.switchRoute('modal'); }}>Modal</a>
           </li>
-          <li>
-            <a>Carousel</a>
+          <li class="${this.page === 'carousel' ? 'active' : ''}">
+            <a @click=${() => { this.switchRoute('carousel'); }}>Carousel</a>
           </li>
         </ul>
 
         <h2>Templates</h2>
         <ul>
-          <li>
-            <a>About</a>
+          <li class="${this.page === 'templates' ? 'active' : ''}">
+            <a @click=${() => { this.switchRoute('templates'); }}>About</a>
           </li>
-          <li>
-            <a
-              href="https://kemet-templates.stackblitz.io/agency.html"
-              target="_blank"
-              style="text-decoration:none;">
-              Agency
-            </a>
+          <li class="${this.page === 'agency' ? 'active' : ''}">
+            <a @click=${() => { this.switchRoute('agency'); }}>Agency</a>
           </li>
-          <li>
-            <a
-              href="https://kemet-templates.stackblitz.io/ecommerce.html"
-              target="_blank"
-              style="text-decoration:none;">
-              Ecommerce
-            </a>
+          <li class="${this.page === 'ecommerce' ? 'active' : ''}">
+            <a @click=${() => { this.switchRoute('ecommerce'); }}>Ecommerce</a>
           </li>
-          <li>
-            <a
-              href="https://kemet-templates.stackblitz.io/news.html"
-              target="_blank"
-              style="text-decoration:none;">
-              News
-            </a>
+          <li class="${this.page === 'news' ? 'active' : ''}">
+            <a @click=${() => { this.switchRoute('news'); }}>News</a>
           </li>
-          <li>
-            <a
-              href="https://kemet-templates.stackblitz.io/travel.html"
-              target="_blank"
-              style="text-decoration:none;">
-              Travel
-            </a>
+          <li class="${this.page === 'travel' ? 'active' : ''}">
+            <a @click=${() => { this.switchRoute('travel'); }}>Travel</a>
           </li>
         </ul>
       </section>
