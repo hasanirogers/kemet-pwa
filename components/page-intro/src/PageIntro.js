@@ -120,7 +120,7 @@ export class PageIntro extends LitElement {
       <section class="designless">
         <h2>Designless?</h2>
         ${svgBlueprint}
-        <p>Design System are great. They give us the ability to take components and reuse them for a consistent look and feel acorss multiple projects using different technologies. However, what if you wanted to use the same components across different looks and feels? Enter Kemet Designless System. Designless means our system gives you raw behavior without the design. Take the system and design it however you want! Kemet is design to be a blueprint for you to design on top of. Kemet styles are structural for layout only. Kemet's components only include raw behavior. Kemet goes out of its way to make sure you have full control over your design.</p>
+        <p>Design System are great. They give us the ability to take components and reuse them for a consistent look and feel acorss multiple projects using different technologies. However, what if you wanted to use the same components across different looks and feels? Enter Kemet Designless System. Designless means our system gives you raw behavior without the design. Take the system and design it however you want! Kemet is designed to be a blueprint for you to design on top of.</p>
       </section>
 
       <section class="features">
@@ -133,7 +133,7 @@ export class PageIntro extends LitElement {
         <div>
           <h2>Components</h2>
           ${svgComponents}
-          <p>Kemet's components are fully stylable by you for a custom look and feel.</p>
+          <p>Kemet components are fully stylable by you for a custom look and feel.</p>
           <a class="standard-btn" @click=${() => this.switchRoute('components')}>Learn More</a>
         </div>
         <div>

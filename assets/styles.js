@@ -20,6 +20,16 @@ export const stylesBase = css`
     margin-bottom: 1rem;
   }
 
+  article {
+    padding: 2rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    article {
+      margin-left: var(--app-drawer-width);
+    }
+  }
+
   h1 {
     font-size: 2rem;
   }
@@ -49,7 +59,7 @@ export const stylesBase = css`
     border: 1px solid var(--app-black-25);
   }
 
-  .box {
+  figure .box {
     width: 100%;
     background: var(--app-primary-color);
     display: block;
@@ -58,7 +68,7 @@ export const stylesBase = css`
     box-sizing: border-box;
   }
 
-  [layout*="flexcolumn"] .box {
+  figure [layout*="flexcolumn"] .box {
     height: 100%;
   }
 `;
