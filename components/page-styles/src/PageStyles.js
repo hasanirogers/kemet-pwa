@@ -11,14 +11,6 @@ export class PageStyles extends LitElement {
           display: flex;
         }
 
-        @media screen and (min-width: 768px) {
-          article {
-            max-width: 1280px;
-            margin: auto;
-            padding-right: 2rem;
-            padding-left: calc(var(--app-drawer-width) + 2rem);
-          }
-        }
       `
     ];
   }
@@ -88,6 +80,9 @@ export class PageStyles extends LitElement {
 
         <h2>components.css</h2>
         <p>Because of the designless philosophy, out of the box, Kemet components are minimalist and include styles only for behavior. However kemet styles include a style sheet that does design the components. This is mostly for you got get a feel how to style the component by example. Kemet encourages you however to style the components as you please.</p>
+
+        <h2>Legacy Support</h2>
+        <p>Kemet styles have been tested to work in browsers as far back as IE11.</p>
       </article>
     `;
   }

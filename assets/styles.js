@@ -48,7 +48,10 @@ export const stylesBase = css`
 
   @media screen and (min-width: 768px) {
     article {
-      margin-left: var(--app-drawer-width);
+      max-width: 1280px;
+      margin: auto;
+      padding-right: 2rem;
+      padding-left: calc(var(--app-drawer-width) + 2rem);
     }
   }
 
