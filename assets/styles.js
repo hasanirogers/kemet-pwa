@@ -46,7 +46,10 @@ export const stylesBase = css`
   }
 
   code {
+    color: var(--app-white-rich);
     display: inline-block;
+    padding: 3px;
+    background: var(--app-primary-color-75);
   }
 
   pre code {
