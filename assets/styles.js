@@ -29,6 +29,23 @@ export const stylesBase = css`
     color: var(--app-tertiary-color-75);
   }
 
+  ol {
+    margin: 0;
+    padding: 0;
+    list-style-position: inside;
+  }
+
+  ol li {
+    margin-bottom: 1rem;
+  }
+
+  th,
+  td {
+    text-align: left;
+    padding: 0.5rem;
+    border: 1px solid var(--app-black-25);
+  }
+
   @media screen and (min-width: 768px) {
     article {
       margin-left: var(--app-drawer-width);

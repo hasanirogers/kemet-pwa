@@ -1,5 +1,5 @@
 import { html, css, LitElement } from 'lit-element';
-import { Router } from '@vaadin/router';
+import { switchRoute } from '../../../utilities/switchRoute.js';
 import { stylesBase, stylesRSCSS } from '../../../assets/styles.js';
 
 import {
@@ -128,31 +128,21 @@ export class PageIntro extends LitElement {
           <h2>Styles</h2>
           ${svgStyles}
           <p>Kemet gives you a powerful layout system that's fully customizable.</p>
-          <a class="standard-btn" @click=${() => this.switchRoute('styles')}>Learn More</a>
+          <a class="standard-btn" @click=${() => switchRoute('styles')}>Learn More</a>
         </div>
         <div>
           <h2>Components</h2>
           ${svgComponents}
           <p>Kemet components are fully stylable by you for a custom look and feel.</p>
-          <a class="standard-btn" @click=${() => this.switchRoute('components')}>Learn More</a>
+          <a class="standard-btn" @click=${() => switchRoute('components')}>Learn More</a>
         </div>
         <div>
           <h2>Templates</h2>
           ${svgTemplates}
           <p>Kemet templates get you up and running full speed with concrete examples.</p>
-          <a class="standard-btn" @click=${() => this.switchRoute('templates')}>Learn More</a>
+          <a class="standard-btn" @click=${() => switchRoute('templates')}>Learn More</a>
         </div>
       </section>
     `;
-  }
-
-  switchRoute(route) {
-    this.dispatchEvent(new CustomEvent('switched-route', {
-      bubbles: true,
-      composed: true,
-      detail: route
-    }));
-
-    Router.go(`/${route}`);
   }
 }
