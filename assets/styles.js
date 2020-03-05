@@ -9,10 +9,6 @@ export const stylesBase = css`
 
   a {
     cursor: pointer;
-  }
-
-  a:visited {
-    color: inherit;
     text-decoration: none;
   }
 
@@ -22,6 +18,15 @@ export const stylesBase = css`
 
   article {
     padding: 2rem;
+  }
+
+  article a {
+    color: var(--app-tertiary-color);
+    transition: all 300ms ease;
+  }
+
+  article a:hover {
+    color: var(--app-tertiary-color-75);
   }
 
   @media screen and (min-width: 768px) {

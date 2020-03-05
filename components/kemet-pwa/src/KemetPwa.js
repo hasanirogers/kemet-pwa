@@ -11,6 +11,7 @@ import '../../page-intro/page-intro.js';
 import '../../page-styles/page-styles.js';
 import '../../page-layout/page-layout.js';
 import '../../page-utilities/page-utilities.js';
+import '../../page-sass/page-sass.js';
 
 export class KemetPwa extends LitElement {
   static get styles() {
@@ -63,13 +64,6 @@ export class KemetPwa extends LitElement {
     this.drawer = this.shadowRoot.querySelector('kemet-drawer');
     const router = new Router(this.shadowRoot.querySelector('[data-outlet]'));
 
-    // router.setRoutes([
-    //   { path: '/', component: 'page-intro' },
-    //   { path: '/introduction', component: 'page-intro' },
-    //   { path: '/styles', component: 'page-styles' },
-    //   { path: '(.*)', redirect: '/' },
-    // ]);
-
     router.setRoutes([{
       path: '/',
       animate: true,
@@ -79,6 +73,7 @@ export class KemetPwa extends LitElement {
         { path: '/styles', component: 'page-styles' },
         { path: '/layout', component: 'page-layout' },
         { path: '/utilities', component: 'page-utilities' },
+        { path: '/sass', component: 'page-sass' },
         { path: '(.*)', redirect: '/' },
       ]
     }]);
