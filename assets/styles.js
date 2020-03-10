@@ -57,6 +57,7 @@ export const stylesBase = css`
   th,
   td {
     text-align: left;
+    vertical-align: top;
     padding: 0.5rem;
     border: 1px solid var(--app-black-25);
   }

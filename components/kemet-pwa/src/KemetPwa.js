@@ -13,6 +13,7 @@ import '../../page-layout/page-layout.js';
 import '../../page-utilities/page-utilities.js';
 import '../../page-sass/page-sass.js';
 import '../../page-components/page-components.js';
+import '../../page-drawer/page-drawer.js';
 
 export class KemetPwa extends LitElement {
   static get styles() {
@@ -76,6 +77,7 @@ export class KemetPwa extends LitElement {
         { path: '/utilities', component: 'page-utilities' },
         { path: '/sass', component: 'page-sass' },
         { path: '/components', component: 'page-components' },
+        { path: '/drawer', component: 'page-drawer' },
         { path: '(.*)', redirect: '/' },
       ]
     }]);
