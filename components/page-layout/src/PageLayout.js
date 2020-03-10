@@ -1,6 +1,6 @@
 import { html, css, LitElement } from 'lit-element';
-// import * as hljs from 'highlight.js';
 import { stylesBase } from '../../../assets/styles.js';
+import { versions } from '../../kemet-pwa/src/versions.js';
 
 import {
   sampleFlexlayout1,
@@ -38,8 +38,8 @@ export class PageLayout extends LitElement {
 
   render() {
     return html`
-      <link href="https://unpkg.com/@kemet/kemet-styles@1.3.1/dist/kemet.layout.css" rel="stylesheet" type="text/css">
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/vs2015.min.css" rel="stylesheet" type="text/css"/>
+      <link href="https://unpkg.com/@kemet/kemet-styles@${versions.kemetStyles}/dist/kemet.layout.css" rel="stylesheet" type="text/css">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/${versions.highlightjs}/styles/vs2015.min.css" rel="stylesheet" type="text/css"/>
       <article>
         <h1>Layout</h1>
         <section>

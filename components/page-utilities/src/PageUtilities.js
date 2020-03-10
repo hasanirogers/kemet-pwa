@@ -1,5 +1,6 @@
 import { html, css, LitElement } from 'lit-element';
 import { stylesBase } from '../../../assets/styles.js';
+import { versions } from '../../kemet-pwa/src/versions.js';
 
 export class PageUtilities extends LitElement {
   static get styles() {
@@ -15,8 +16,8 @@ export class PageUtilities extends LitElement {
 
   render() {
     return html`
-      <link href="https://unpkg.com/@kemet/kemet-styles@1.3.1/dist/kemet.utilities.css" rel="stylesheet" type="text/css">
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/vs2015.min.css" rel="stylesheet" type="text/css"/>
+      <link href="https://unpkg.com/@kemet/kemet-styles@${versions.kemetStyles}/dist/kemet.utilities.css" rel="stylesheet" type="text/css">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/${versions.highlightjs}/styles/vs2015.min.css" rel="stylesheet" type="text/css"/>
       <article>
         <section>
           <h2>Utility Classes</h2>

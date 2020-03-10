@@ -17,6 +17,7 @@ export const stylesBase = css`
   }
 
   article {
+    width: 100%;
     padding: 2rem;
   }
 
@@ -29,6 +30,15 @@ export const stylesBase = css`
     color: var(--app-tertiary-color-75);
   }
 
+  @media screen and (min-width: 768px) {
+    article {
+      max-width: 1280px;
+      margin: auto;
+      padding-right: 2rem;
+      padding-left: calc(var(--app-drawer-width) + 2rem);
+    }
+  }
+
   ol {
     margin: 0;
     padding: 0;
@@ -39,20 +49,16 @@ export const stylesBase = css`
     margin-bottom: 1rem;
   }
 
+  table {
+    width: 99%;
+    border-collapse: collapse;
+  }
+
   th,
   td {
     text-align: left;
     padding: 0.5rem;
     border: 1px solid var(--app-black-25);
-  }
-
-  @media screen and (min-width: 768px) {
-    article {
-      max-width: 1280px;
-      margin: auto;
-      padding-right: 2rem;
-      padding-left: calc(var(--app-drawer-width) + 2rem);
-    }
   }
 
   h1 {
@@ -158,6 +164,10 @@ export const stylesRSCSS = css`
   ._responsiveimg {
     max-width: 100%;
     height: auto;
+  }
+
+  ._responsivetable {
+    overflow-x: auto;
   }
 `;
 
