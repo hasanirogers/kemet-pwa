@@ -37,6 +37,15 @@ export class PageDrawer extends LitElement {
 
           <br><hr><br>
 
+          <h2>Usage</h2>
+          <pre><code class="javascript">import '@kemet/kemet-drawer/kemet-drawer.js';</code></pre>
+          <h3>Markup</h3>
+          <pre><code class="html">${snippetMarkup}</code></pre>
+          <h3>Javascript</h3>
+          <pre><code class="javascript">${snippetJS}</code></pre>
+
+          <br><hr><br>
+
           <h2>Demo</h2>
           <p>Select an effect then click the button below.</p>
           <p>
@@ -51,14 +60,6 @@ export class PageDrawer extends LitElement {
             </div>
           </p>
           <p><a class="standard-btn" @click=${this.openDrawer}>Open The Drawer</a></p>
-
-          <br><hr><br>
-
-          <h2>Usage</h2>
-          <h3>Markup</h3>
-          <pre><code class="html">${snippetMarkup}</code></pre>
-          <h3>Javascript</h3>
-          <pre><code class="javascript">${snippetJS}</code></pre>
 
           <br><hr><br>
 
