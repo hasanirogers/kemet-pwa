@@ -147,23 +147,6 @@ export const stylesRSCSS = css`
   }
 
 
-  /* standard-btn */
-
-  .standard-btn {
-    position: relative;
-    display: inline-block;
-    padding: 1rem;
-    text-decoration: none;
-    color: var(--app-white-rich) !important;
-    background: var(--app-primary-color);
-    transition: filter 300ms ease, color 300ms ease;
-  }
-
-  .standard-btn:hover {
-    filter: brightness(150%);
-  }
-
-
   /* helpers */
 
   ._responsiveimg {

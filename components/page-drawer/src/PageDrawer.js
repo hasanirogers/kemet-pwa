@@ -4,6 +4,8 @@ import { versions } from '../../kemet-pwa/src/versions.js';
 
 import { snippetMarkup, snippetJS } from './snippets.js';
 
+import '../../kemet-btn/kemet-btn.js';
+
 export class PageDrawer extends LitElement {
   static get styles() {
     return [
@@ -59,7 +61,7 @@ export class PageDrawer extends LitElement {
               </select>
             </div>
           </p>
-          <p><a class="standard-btn" @click=${this.openDrawer}>Open The Drawer</a></p>
+          <p><kemet-btn @click=${this.openDrawer}>Open The Drawer</kemet-btn></p>
 
           <br><hr><br>
 

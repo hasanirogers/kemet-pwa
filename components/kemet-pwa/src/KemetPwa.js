@@ -8,6 +8,7 @@ import { versions } from './versions.js';
 import '@kemet/kemet-drawer/kemet-drawer';
 
 import '../../kemet-nav/kemet-nav.js';
+import '../../kemet-btn/kemet-btn.js';
 import '../../page-intro/page-intro.js';
 import '../../page-styles/page-styles.js';
 import '../../page-layout/page-layout.js';
@@ -115,7 +116,7 @@ export class KemetPwa extends LitElement {
           <h2>This modal has an effect. 😊</h2>
           <p>Bacon ipsum dolor amet doner turkey turducken boudin. Kevin salami ground round, frankfurter brisket tri-tip hamburger beef alcatra sirloin venison pastrami turducken. Strip steak ball tip pig swine burgdoggen sausage t-bone doner leberkas pork ham alcatra pork belly. Turducken corned beef rump chicken pancetta doner sirloin tail. Tenderloin ground round salami short ribs, bresaola andouille beef ribs tri-tip pastrami turkey ribeye ham fatback.</p>
           <kemet-modal-close>
-            <a class="standard-btn">Close Me</a>
+            <kemet-btn>Close Me</kemet-btn>
           </kemet-modal-close>
         </div>
       </kemet-modal>
@@ -125,7 +126,7 @@ export class KemetPwa extends LitElement {
           <h2>This modal has no effect. 😔</h2>
           <p>Bacon ipsum dolor amet doner turkey turducken boudin. Kevin salami ground round, frankfurter brisket tri-tip hamburger beef alcatra sirloin venison pastrami turducken. Strip steak ball tip pig swine burgdoggen sausage t-bone doner leberkas pork ham alcatra pork belly. Turducken corned beef rump chicken pancetta doner sirloin tail. Tenderloin ground round salami short ribs, bresaola andouille beef ribs tri-tip pastrami turkey ribeye ham fatback.</p>
           <kemet-modal-close>
-            <a class="standard-btn">Close Me</a>
+            <kemet-btn>Close Me</kemet-btn>
           </kemet-modal-close>
         </div>
       </kemet-modal>

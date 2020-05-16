@@ -9,6 +9,7 @@ import {
   svgTemplates,
 } from '../../../assets/svg.js';
 
+import '../../kemet-btn/kemet-btn.js';
 
 export class PageIntro extends LitElement {
   static get styles() {
@@ -126,19 +127,19 @@ export class PageIntro extends LitElement {
           <h2>Styles</h2>
           ${svgStyles}
           <p>Kemet gives you a powerful layout system that's fully customizable.</p>
-          <a class="standard-btn" @click=${() => switchRoute('styles')}>Learn More</a>
+          <kemet-btn @click=${() => switchRoute('styles')}>Learn More</kemet-btn>
         </div>
         <div>
           <h2>Components</h2>
           ${svgComponents}
           <p>Kemet components are fully stylable by you for a custom look and feel.</p>
-          <a class="standard-btn" @click=${() => switchRoute('components')}>Learn More</a>
+          <kemet-btn @click=${() => switchRoute('components')}>Learn More</kemet-btn>
         </div>
         <div>
           <h2>Templates</h2>
           ${svgTemplates}
           <p>Kemet templates get you up and running full speed with concrete examples.</p>
-          <a class="standard-btn" @click=${() => switchRoute('templates')}>Learn More</a>
+          <kemet-btn @click=${() => switchRoute('templates')}>Learn More</kemet-btn>
         </div>
       </section>
     `;

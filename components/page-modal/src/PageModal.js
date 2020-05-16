@@ -9,6 +9,8 @@ import {
   snippetJS
 } from './snippets.js';
 
+import '../../kemet-btn/kemet-btn.js';
+
 import '@kemet/kemet-modal/kemet-modal.js';
 import '@kemet/kemet-modal/kemet-modal-close.js';
 
@@ -86,6 +88,8 @@ export class PageModal extends LitElement {
           <h2>Demo</h2>
           <p>Keep in mind that Kemet is a designless system. However <a href="https://github.com/hasanirogers/kemet-styles/blob/master/src/scss/components/modal.scss" target="_blank">styles were created for this demo</a>. Feel free to use the styles but we encouage you to style it to your specs.</p>
 
+          <br>
+
           <h3>Modal Effects</h3>
           <p>Select an effect then click the button below.</p>
           <div>
@@ -107,7 +111,7 @@ export class PageModal extends LitElement {
               </select>
             </div>
           </div>
-          <p><a class="standard-btn" @click=${() => this.openModal('has-effect')}>Open Modal</a></p>
+          <p><kemet-btn @click=${() => this.openModal('has-effect')}>Open Modal</kemet-btn></p>
 
           <br>
 
@@ -125,14 +129,14 @@ export class PageModal extends LitElement {
               Scale the content when the modal opens.
             </label>
           </p>
-          <p><a class="standard-btn" @click=${() => this.openModal('no-effect')}>Open Modal</a></p>
+          <p><kemet-btn @click=${() => this.openModal('no-effect')}>Open Modal</kemet-btn></p>
           <p>The implementation for adding effects to content depends on your app. Check out <a href="https://github.com/hasanirogers/kemet-modal/blob/master/demo/index.html" target="_blank">our demo</a> for some ideas.</p>
 
           <br>
 
           <h3>No Close Button</h3>
           <p>The element <code>kemet-modal-close</code> is optional. You can also add an <code>closeOnClick</code> property to the modal. This will allow the user to close the modal if they click outside the modal.</p>
-          <p><a class="standard-btn" @click=${() => this.openModal('no-close-btn')}>Open Modal With No Button</a></p>
+          <p><kemet-btn @click=${() => this.openModal('no-close-btn')}>Open Modal With No Button</kemet-btn></p>
 
           <br>
 
