@@ -39,6 +39,10 @@ export class KemetPwa extends LitElement {
           height: 32px;
         }
 
+        kemet-drawer[opened] ~ kemet-nav[content] {
+          display: none;
+        }
+
         /*
         [data-outlet] > .leaving {
           animation: 1s fadeOut ease-in-out;
