@@ -62,6 +62,10 @@ export const stylesBase = css`
     border: 1px solid var(--app-black-25);
   }
 
+  td:first-child {
+    white-space: nowrap;
+  }
+
   h1 {
     font-size: 2rem;
   }
@@ -169,6 +173,15 @@ export const stylesRSCSS = css`
 
   ._responsivetable {
     overflow-x: auto;
+  }
+
+  /* variants */
+  .-blur {
+    filter: blur(2px);
+  }
+
+  .-scale {
+    transform: scale(0.75);
   }
 `;
 

@@ -86,7 +86,7 @@ export class PageStyles extends LitElement {
         <p>While Kemet is designless, some utilities don't control the look and feel of an app. Rather they help with layout, sizing, alignment, etc. These type of styles are included in the <a @click=${() => switchRoute('utilities')}>utilities</a>.</p>
 
         <h2>components.css</h2>
-        <p>Because of the designless philosophy, out of the box, Kemet components are minimalist and include styles only for behavior. However kemet styles include a style sheet that does design the components. This is mostly for you got get a feel how to style the component by example. Kemet encourages you however to style the components as you please.</p>
+        <p>Because of the designless philosophy, out of the box, Kemet components are minimalist and include styles only for behavior. However kemet styles include a style sheet that does design the components. These example styles allow you to get a feel for how to style the components. Kemet encourages you to style the components as you please.</p>
 
         <h2>Legacy Support</h2>
         <p>Kemet styles have been tested to work in browsers as far back as IE11.</p>

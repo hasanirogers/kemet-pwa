@@ -1,8 +1,9 @@
 /* eslint-disable no-restricted-globals */
 import { LitElement, html, css } from 'lit-element';
 import { Router } from '@vaadin/router';
-import { stylesBase, stylesKemetDrawer } from '../../../assets/styles.js';
+import { stylesBase, stylesKemetDrawer, stylesRSCSS } from '../../../assets/styles.js';
 import { svgHamburger } from '../../../assets/svg.js';
+import { versions } from './versions.js';
 
 import '@kemet/kemet-drawer/kemet-drawer';
 
@@ -15,11 +16,14 @@ import '../../page-sass/page-sass.js';
 import '../../page-components/page-components.js';
 import '../../page-drawer/page-drawer.js';
 import '../../page-tabs/page-tabs.js';
+import '../../page-accordion/page-accordion.js';
+import '../../page-modal/page-modal.js';
 
 export class KemetPwa extends LitElement {
   static get styles() {
     return [
       stylesBase,
+      stylesRSCSS,
       stylesKemetDrawer,
       css`
         .hamburger {
@@ -80,6 +84,8 @@ export class KemetPwa extends LitElement {
         { path: '/components', component: 'page-components' },
         { path: '/drawer', component: 'page-drawer' },
         { path: '/tabs', component: 'page-tabs' },
+        { path: '/accordion', component: 'page-accordion' },
+        { path: '/modal', component: 'page-modal' },
         { path: '(.*)', redirect: '/' },
       ]
     }]);
@@ -87,6 +93,8 @@ export class KemetPwa extends LitElement {
 
   render() {
     return html`
+      <link href="https://unpkg.com/@kemet/kemet-styles@${versions.kemetStyles}/dist/kemet.components.css" rel="stylesheet" type="text/css">
+
       <kemet-drawer effect="scale">
         <nav class="site-nav" slot="navigation">
           <kemet-nav></kemet-nav>
@@ -99,7 +107,34 @@ export class KemetPwa extends LitElement {
           <main data-outlet></main>
         </section>
       </kemet-drawer>
+
       <kemet-nav content></kemet-nav>
+
+      <kemet-modal id="has-effect" effect="fadein-scaleup">
+        <div class="content">
+          <h2>This modal has an effect. 😊</h2>
+          <p>Bacon ipsum dolor amet doner turkey turducken boudin. Kevin salami ground round, frankfurter brisket tri-tip hamburger beef alcatra sirloin venison pastrami turducken. Strip steak ball tip pig swine burgdoggen sausage t-bone doner leberkas pork ham alcatra pork belly. Turducken corned beef rump chicken pancetta doner sirloin tail. Tenderloin ground round salami short ribs, bresaola andouille beef ribs tri-tip pastrami turkey ribeye ham fatback.</p>
+          <kemet-modal-close>
+            <a class="standard-btn">Close Me</a>
+          </kemet-modal-close>
+        </div>
+      </kemet-modal>
+
+      <kemet-modal id="no-effect">
+        <div class="content">
+          <h2>This modal has no effect. 😔</h2>
+          <p>Bacon ipsum dolor amet doner turkey turducken boudin. Kevin salami ground round, frankfurter brisket tri-tip hamburger beef alcatra sirloin venison pastrami turducken. Strip steak ball tip pig swine burgdoggen sausage t-bone doner leberkas pork ham alcatra pork belly. Turducken corned beef rump chicken pancetta doner sirloin tail. Tenderloin ground round salami short ribs, bresaola andouille beef ribs tri-tip pastrami turkey ribeye ham fatback.</p>
+          <kemet-modal-close>
+            <a class="standard-btn">Close Me</a>
+          </kemet-modal-close>
+        </div>
+      </kemet-modal>
+
+      <kemet-modal id="no-close-btn" closeOnClick>
+        <div class="content">
+          <p>Bacon ipsum dolor amet doner turkey turducken boudin. Kevin salami ground round, frankfurter brisket tri-tip hamburger beef alcatra sirloin venison pastrami turducken. Strip steak ball tip pig swine burgdoggen sausage t-bone doner leberkas pork ham alcatra pork belly. Turducken corned beef rump chicken pancetta doner sirloin tail. Tenderloin ground round salami short ribs, bresaola andouille beef ribs tri-tip pastrami turkey ribeye ham fatback.</p>
+        </div>
+      </kemet-modal>
     `;
   }
 

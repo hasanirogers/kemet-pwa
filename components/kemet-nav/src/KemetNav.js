@@ -1,8 +1,7 @@
 /* eslint-disable no-restricted-globals */
-/* eslint-disable no-console */
 import { html, css, LitElement } from 'lit-element';
 import { Router } from '@vaadin/router';
-import { stylesBase } from '../../../assets/styles.js';
+import { stylesBase, stylesRSCSS } from '../../../assets/styles.js';
 import { svgAnubis } from '../../../assets/svg.js';
 
 export class KemetNav extends LitElement {
@@ -12,12 +11,21 @@ export class KemetNav extends LitElement {
         type: String,
         reflect: true,
       },
+
+      blurContent: {
+        type: Boolean
+      },
+
+      scaleContent: {
+        type: Boolean
+      }
     };
   }
 
   static get styles() {
     return [
       stylesBase,
+      stylesRSCSS,
       css`
         section {
           width: 100%;
@@ -26,7 +34,9 @@ export class KemetNav extends LitElement {
           position: fixed;
           top: 0;
           left: 0;
+          z-index: 0;
           overflow-y: auto;
+          transition: transform 300ms ease;
         }
 
         h1 {
@@ -120,9 +130,10 @@ export class KemetNav extends LitElement {
   constructor() {
     super();
 
+    this.scaleContent = false;
     this.page = location.pathname === '/' ? 'introduction' : location.pathname.replace('/', '');
-    document.addEventListener('switched-route', this.handleSwitchRoute.bind(this));
 
+    document.addEventListener('switched-route', this.handleSwitchRoute.bind(this));
   }
 
   firstUpdated() {
@@ -131,7 +142,7 @@ export class KemetNav extends LitElement {
 
   render() {
     return html`
-      <section>
+      <section class="${this.blurContent ? '-blur' : ''} ${this.scaleContent ? '-scale' : ''}">
         <h1 @click=${() => { this.switchRoute('introduction'); }}>
           ${svgAnubis}
           <span>Kemet</span>

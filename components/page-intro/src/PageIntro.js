@@ -4,7 +4,6 @@ import { stylesBase, stylesRSCSS } from '../../../assets/styles.js';
 
 import {
   svgAnubis,
-  svgBlueprint,
   svgStyles,
   svgComponents,
   svgTemplates,
@@ -58,7 +57,7 @@ export class PageIntro extends LitElement {
         }
 
         h2 {
-          margin: 0;
+          margin: 0 0 1rem 0;
         }
 
         section {
@@ -119,7 +118,6 @@ export class PageIntro extends LitElement {
 
       <section class="designless">
         <h2>Designless?</h2>
-        ${svgBlueprint}
         <p>Design System are great. They give us the ability to take components and reuse them for a consistent look and feel acorss multiple projects using different technologies. However, what if you wanted to use the same components across different looks and feels? Enter Kemet Designless System. Designless means our system gives you raw behavior without the design. Take the system and design it however you want! Kemet is designed to be a blueprint for you to design on top of.</p>
       </section>
 
