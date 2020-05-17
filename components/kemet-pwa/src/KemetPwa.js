@@ -19,6 +19,7 @@ import '../../page-drawer/page-drawer.js';
 import '../../page-tabs/page-tabs.js';
 import '../../page-accordion/page-accordion.js';
 import '../../page-modal/page-modal.js';
+import '../../page-carousel/page-carousel.js';
 
 export class KemetPwa extends LitElement {
   static get styles() {
@@ -91,6 +92,7 @@ export class KemetPwa extends LitElement {
         { path: '/tabs', component: 'page-tabs' },
         { path: '/accordion', component: 'page-accordion' },
         { path: '/modal', component: 'page-modal' },
+        { path: '/carousel', component: 'page-carousel' },
         { path: '(.*)', redirect: '/' },
       ]
     }]);

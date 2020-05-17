@@ -59,6 +59,7 @@
   "license": "MIT",
   "dependencies": {
     "@kemet/kemet-accordion": "^1.0.0",
+    "@kemet/kemet-carousel": "^1.0.0",
     "@kemet/kemet-drawer": "^1.0.1",
     "@kemet/kemet-modal": "^1.0.1",
     "@kemet/kemet-tabs": "^1.0.0",

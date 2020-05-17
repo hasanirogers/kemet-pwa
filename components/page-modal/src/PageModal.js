@@ -113,8 +113,6 @@ export class PageModal extends LitElement {
           </div>
           <p><kemet-btn @click=${() => this.openModal('has-effect')}>Open Modal</kemet-btn></p>
 
-          <br>
-
           <h3>Content Effects</h3>
           <p>Your content is your own. Our modal component can't control effects on your content because you structure it as you please. However you can tap into the <code>kemet-modal-open</code> and <code>kemet-modal-close</code> events to add effects to your own content. The following demostrates an approach to doing this.</p>
           <p>
