@@ -20,6 +20,7 @@ import '../../page-tabs/page-tabs.js';
 import '../../page-accordion/page-accordion.js';
 import '../../page-modal/page-modal.js';
 import '../../page-carousel/page-carousel.js';
+import '../../page-templates/page-templates.js';
 import '../../page-agency/page-agency.js';
 import '../../page-ecommerce/page-ecommerce.js';
 import '../../page-news/page-news.js';
@@ -97,6 +98,7 @@ export class KemetPwa extends LitElement {
         { path: '/accordion', component: 'page-accordion' },
         { path: '/modal', component: 'page-modal' },
         { path: '/carousel', component: 'page-carousel' },
+        { path: '/templates', component: 'page-templates' },
         { path: '/agency', component: 'page-agency' },
         { path: '/ecommerce', component: 'page-ecommerce'},
         { path: '/news', component: 'page-news' },
