@@ -37,7 +37,10 @@
     "extends": [
       "@open-wc/eslint-config",
       "eslint-config-prettier"
-    ]
+    ],
+    "rules": {
+      "lit/attribute-value-entities": "off"
+    }
   },
   "prettier": "@open-wc/prettier-config",
   "husky": {

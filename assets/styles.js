@@ -18,6 +18,7 @@ export const stylesBase = css`
 
   article {
     width: 100%;
+    min-height: 100vh;
     padding: 2rem;
   }
 
@@ -28,6 +29,11 @@ export const stylesBase = css`
 
   article a:hover {
     color: var(--app-tertiary-color-75);
+  }
+
+  iframe {
+    width: 100%;
+    min-height: 75vh;
   }
 
   @media screen and (min-width: 768px) {

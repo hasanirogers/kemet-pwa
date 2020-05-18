@@ -22,8 +22,6 @@ export class PageAccordion extends LitElement {
   }
 
   firstUpdated() {
-    this.drawer = document.querySelector('kemet-pwa').shadowRoot.querySelector('kemet-drawer');
-
     this.shadowRoot.querySelectorAll('pre code').forEach((block) => {
       window.hljs.highlightBlock(block);
     });
@@ -114,13 +112,5 @@ export class PageAccordion extends LitElement {
         </section>
       </article>
     `;
-  }
-
-  openDrawer() {
-    this.drawer.open();
-  }
-
-  updateEffect(event) {
-    this.drawer.effect = event.target.value;
   }
 }
