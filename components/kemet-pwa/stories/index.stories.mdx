@@ -1,0 +1,55 @@
+import { Story, Preview, Meta, Props, html } from '@open-wc/demoing-storybook';
+
+import '../kemet-pwa.js';
+
+<Meta 
+  title="KemetPwa"
+  parameters={{
+    component: "kemet-pwa",
+    options: { selectedPanel: "storybookjs/knobs/panel" }
+  }}
+/>
+
+# KemetPwa
+
+A component for...
+
+## Features:
+
+- a
+- b
+- ...
+
+## How to use
+
+### Installation
+
+```bash
+yarn add kemet-pwa
+```
+
+```js
+import 'kemet-pwa/kemet-pwa.js';
+```
+
+<Preview withToolbar>
+  <Story name="Simple">
+    {html`
+      <kemet-pwa></kemet-pwa>
+    `}
+  </Story>
+</Preview>
+
+## API
+
+<Props of="kemet-pwa" />
+
+## Variations
+
+###### Custom Title
+
+<Story name="Custom Title">
+  {html`
+    <kemet-pwa .title=${'Hello World'}></kemet-pwa>
+  `}
+</Story>

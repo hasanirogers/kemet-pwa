@@ -1,5 +1,20 @@
-build/
-node_modules/
-test/integration/screenshots-current/
-_site/
+## editors
+/.idea
+/.vscode
+
+## system files
 .DS_Store
+
+## npm
+/node_modules/
+/npm-debug.log
+
+## testing
+/coverage/
+
+## temp folders
+/.tmp/
+
+# build
+/_site/
+/dist/
