@@ -1,24 +1,26 @@
-<p align="center">
-  <img width="200" src="https://open-wc.org/hero.png"></img>
-</p>
+# New Project
 
-## Open-wc Starter App
+> ✨ Bootstrapped with Create Snowpack App (CSA).
 
-[![Built with open-wc recommendations](https://img.shields.io/badge/built%20with-open--wc-blue.svg)](https://github.com/open-wc)
+## Available Scripts
 
-## Quickstart
+### npm start
 
-To get started:
+Runs the app in the development mode.
+Open http://localhost:8080 to view it in the browser.
 
-```sh
-npm init @open-wc
-# requires node 10 & npm 6 or higher
+The page will reload if you make edits.
+You will also see any lint errors in the console.
+
+### npm run build
+
+Builds the app for production to the `dist/` folder.
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+## Directives
+
+In case you need to add a directive like `classMap` you should add the extension to the import:
+
 ```
-
-## Scripts
-
-- `start` runs your app for development, reloading on file changes
-- `start:build` runs your app after it has been built using the build command
-- `build` builds your app and outputs it in your `dist` directory
-- `test` runs your test suite with Karma
-- `lint` runs the linter for your project
+import { classMap } from "lit-html/directives/class-map.js";
+```
