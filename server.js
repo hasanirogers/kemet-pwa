@@ -4,6 +4,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
 const app = express();
+const catchall = require('./server/routes/catchall');
 
 const env = process.env.NODE_ENV || 'development';
 app.locals.ENV = env;
@@ -17,5 +18,6 @@ app.use(bodyParser.urlencoded({
 
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'dist')));
+app.use('/*', catchall);
 
 module.exports = app;
