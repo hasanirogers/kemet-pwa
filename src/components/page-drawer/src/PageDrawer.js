@@ -61,6 +61,14 @@ export class PageDrawer extends LitElement {
               </select>
             </div>
           </p>
+          <p>
+            <div class="select-box">
+              <select class="select" @change=${(event) => this.updateSide(event)}>
+                <option value="left">Left</option>
+                <option value="right">Right</option>
+              </select>
+            </div>
+          </p>
           <p><kemet-btn @click=${this.openDrawer}>Open The Drawer</kemet-btn></p>
 
           <br><hr><br>
@@ -90,6 +98,11 @@ export class PageDrawer extends LitElement {
                   <td>false</td>
                 </tr>
                 <tr>
+                  <td>side</td>
+                  <td>Determines which side the drawer opens from.<div><em>String</em></div></td>
+                  <td>left</td>
+                </tr>
+                <tr>
                   <td colspan="3"><b>slots</b></td>
                 </tr>
                 <tr>
@@ -100,7 +113,6 @@ export class PageDrawer extends LitElement {
                   <td>content</td>
                   <td colspan="2">The main page content area.</td>
                 </tr>
-
                 <tr>
                   <td colspan="3"><b>methods</b></td>
                 </tr>
@@ -116,9 +128,6 @@ export class PageDrawer extends LitElement {
                   <td>toggle</td>
                   <td colspan="2">Toggles the drawer.</td>
                 </tr>
-
-
-
                 <tr>
                   <td colspan="3"><b>css</b></td>
                 </tr>
@@ -157,5 +166,9 @@ export class PageDrawer extends LitElement {
 
   updateEffect(event) {
     this.drawer.effect = event.target.value;
+  }
+
+  updateSide(event) {
+    this.drawer.side = event.target.value;
   }
 }

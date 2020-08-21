@@ -1,7 +1,7 @@
 import { html } from 'lit-element';
 
 export const snippetMarkup = html
-`&lt;kemet-drawer effect="[choose-an-effect]"&gt;
+`&lt;kemet-drawer effect="[choose-an-effect]" side="[choose-a-side]"&gt;
   &lt;nav slot="navigation"&gt;
     &lt;!-- your navigation markup here --&gt;
   &lt;/nav&gt;
