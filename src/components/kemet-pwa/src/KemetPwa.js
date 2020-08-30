@@ -20,6 +20,7 @@ import '../../page-tabs/page-tabs.js';
 import '../../page-accordion/page-accordion.js';
 import '../../page-modal/page-modal.js';
 import '../../page-carousel/page-carousel.js';
+import '../../page-scrollsnap/page-scrollsnap.js';
 import '../../page-templates/page-templates.js';
 import '../../page-agency/page-agency.js';
 import '../../page-ecommerce/page-ecommerce.js';
@@ -98,6 +99,7 @@ export class KemetPwa extends LitElement {
         { path: '/accordion', component: 'page-accordion' },
         { path: '/modal', component: 'page-modal' },
         { path: '/carousel', component: 'page-carousel' },
+        { path: '/scrollsnap', component: 'page-scrollsnap' },
         { path: '/templates', component: 'page-templates' },
         { path: '/agency', component: 'page-agency' },
         { path: '/ecommerce', component: 'page-ecommerce'},
@@ -110,7 +112,7 @@ export class KemetPwa extends LitElement {
 
   render() {
     return html`
-      <link href="https://unpkg.com/@kemet/kemet-styles@${versions.kemetStyles}/dist/kemet.components.css" rel="stylesheet" type="text/css">
+      <link href="https://unpkg.com/@kemet/kemet-styles@latest/dist/kemet.components.css" rel="stylesheet" type="text/css">
 
       <kemet-drawer effect="scale">
         <nav class="site-nav" slot="navigation">

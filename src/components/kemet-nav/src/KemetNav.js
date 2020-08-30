@@ -184,6 +184,9 @@ export class KemetNav extends LitElement {
           <li class="${this.page === 'carousel' ? 'active' : ''}">
             <a @click=${() => { this.switchRoute('carousel'); }}>Carousel</a>
           </li>
+          <li class="${this.page === 'scrollsnap' ? 'active' : ''}">
+            <a @click=${() => { this.switchRoute('scrollsnap'); }}>Scroll Snap</a>
+          </li>
         </ul>
 
         <h2>Templates</h2>

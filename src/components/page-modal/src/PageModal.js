@@ -64,7 +64,7 @@ export class PageModal extends LitElement {
 
   render() {
     return html`
-      <link href="https://unpkg.com/@kemet/kemet-styles@${versions.kemetStyles}/dist/kemet.components.css" rel="stylesheet" type="text/css">
+      <link href="https://unpkg.com/@kemet/kemet-styles@latest/dist/kemet.components.css" rel="stylesheet" type="text/css">
       <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/${versions.highlightjs}/styles/vs2015.min.css" rel="stylesheet" type="text/css"/>
       <article class="${this.blurContent ? '-blur' : ''} ${this.scaleContent ? '-scale' : ''}">
         <h1>Modal</h1>

@@ -38,7 +38,7 @@ export class PageLayout extends LitElement {
 
   render() {
     return html`
-      <link href="https://unpkg.com/@kemet/kemet-styles@${versions.kemetStyles}/dist/kemet.layout.css" rel="stylesheet" type="text/css">
+      <link href="https://unpkg.com/@kemet/kemet-styles@latest/dist/kemet.layout.css" rel="stylesheet" type="text/css">
       <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/${versions.highlightjs}/styles/vs2015.min.css" rel="stylesheet" type="text/css"/>
       <article>
         <h1>Layout</h1>
