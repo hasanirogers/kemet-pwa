@@ -179,4 +179,13 @@ export const stylesKemetDrawer = css`
     --kemet-drawer-width: var(--app-drawer-width);
     --kemet-drawer-background: var(--app-primary-color);
   }
+
+  kemet-drawer[opened] ~ kemet-nav[content] {
+    display: none;
+  }
+
+  kemet-drawer[side="top"],
+  kemet-drawer[side="bottom"] {
+    --kemet-drawer-height: 50vh;
+  }
 `;

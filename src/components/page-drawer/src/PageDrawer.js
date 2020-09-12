@@ -15,6 +15,12 @@ export class PageDrawer extends LitElement {
         :host {
           display: block;
         }
+
+        .property-select {
+          display: grid;
+          gap: 2rem;
+          grid-template-columns: 1fr 1fr;
+        }
     `
     ];
   }
@@ -29,6 +35,7 @@ export class PageDrawer extends LitElement {
 
   render() {
     return html`
+      <link href="https://unpkg.com/@kemet/kemet-styles@latest/dist/kemet.components.css" rel="stylesheet" type="text/css">
       <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/${versions.highlightjs}/styles/vs2015.min.css" rel="stylesheet" type="text/css"/>
       <article>
         <h1>Drawer</h1>
@@ -49,8 +56,8 @@ export class PageDrawer extends LitElement {
           <br><hr><br>
 
           <h2>Demo</h2>
-          <p>Select an effect then click the button below.</p>
-          <p>
+          <p>Select an effect and a side then click the open drawer button below.</p>
+          <div class="property-select">
             <div class="select-box">
               <select class="select" @change=${(event) => this.updateEffect(event)}>
                 <option value="slide">Slide</option>
@@ -60,15 +67,15 @@ export class PageDrawer extends LitElement {
                 <option value="door">Door</option>
               </select>
             </div>
-          </p>
-          <p>
             <div class="select-box">
               <select class="select" @change=${(event) => this.updateSide(event)}>
-                <option value="left">Left</option>
+              <option value="left">Left</option>
+                <option value="top">Top</option>
                 <option value="right">Right</option>
+                <option value="bottom">Bottom</option>
               </select>
             </div>
-          </p>
+          </div>
           <p><kemet-btn @click=${this.openDrawer}>Open The Drawer</kemet-btn></p>
 
           <br><hr><br>
@@ -112,6 +119,21 @@ export class PageDrawer extends LitElement {
                 <tr>
                   <td>content</td>
                   <td colspan="2">The main page content area.</td>
+                </tr>
+                <tr>
+                  <td colspan="3"><b>events</b></td>
+                </tr>
+                <tr>
+                  <td>kemet-drawer-open</td>
+                  <td colspan="2">Fires when the drawer opens.</td>
+                </tr>
+                <tr>
+                  <td>kemet-drawer-close</td>
+                  <td colspan="2">Fires when the drawer closes.</td>
+                </tr>
+                <tr>
+                  <td>kemet-drawer-toggle</td>
+                  <td colspan="2">Fires when the drawer toggles.</td>
                 </tr>
                 <tr>
                   <td colspan="3"><b>methods</b></td>

@@ -46,11 +46,12 @@ export class KemetPwa extends LitElement {
           height: 32px;
         }
 
-        kemet-drawer[opened] ~ kemet-nav[content] {
-          display: none;
+        @media screen and (min-width: 768px) {
+          .hamburger {
+            display: none;
+          }
         }
 
-        /*
         [data-outlet] > .leaving {
           animation: 1s fadeOut ease-in-out;
         }
@@ -67,13 +68,6 @@ export class KemetPwa extends LitElement {
         @keyframes fadeIn {
           from {opacity: 0;}
           to {opacity: 1;}
-        }
-        */
-
-        @media screen and (min-width: 768px) {
-          .hamburger {
-            display: none;
-          }
         }
       `,
     ];
