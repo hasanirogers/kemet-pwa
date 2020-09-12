@@ -106,7 +106,7 @@ export class PageDrawer extends LitElement {
                 </tr>
                 <tr>
                   <td>side</td>
-                  <td>Determines which side the drawer opens from.<div><em>String</em></div></td>
+                  <td>Determines which side the drawer opens from. Values include: (top|right|bottom|left)<div><em>String</em></div></td>
                   <td>left</td>
                 </tr>
                 <tr>
