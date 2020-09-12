@@ -53,11 +53,11 @@ export class KemetPwa extends LitElement {
         }
 
         [data-outlet] > .leaving {
-          animation: 1s fadeOut ease-in-out;
+          animation: 300ms fadeOut ease-in-out;
         }
 
         [data-outlet] > .entering {
-          animation: 1s fadeIn linear;
+          animation: 300ms fadeIn linear;
         }
 
         @keyframes fadeOut {
