@@ -169,8 +169,8 @@ export class PageTabs extends LitElement {
                   <td colspan="3"><b>events</b></td>
                 </tr>
                 <tr>
-                  <td>kemet-tab-changed</td>
-                  <td colspan="2">Called when a tab is changed.</td>
+                  <td>kemet-tab-selected</td>
+                  <td colspan="2">Called when a tab is selected.</td>
                 </tr>
                 <tr>
                   <td colspan="3"><b>slot</b></td>
