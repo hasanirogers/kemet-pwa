@@ -150,7 +150,7 @@ export class PageScrollsnap extends LitElement {
                   <td colspan="3"><b>properties</b></td>
                 </tr>
                 <tr>
-                  <td>effect</td>
+                  <td>axis</td>
                   <td>Determines the direction the component flows. Values include: (horizontal|vertical)<div><em>String</em></div></td>
                   <td>horizontal</td>
                 </tr>
