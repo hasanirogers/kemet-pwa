@@ -64,7 +64,6 @@ export class PageDrawer extends LitElement {
                 <option value="reveal">Reveal</option>
                 <option value="push">Push</option>
                 <option value="scale" selected>Scale</option>
-                <option value="door">Door</option>
               </select>
             </div>
             <div class="select-box">
@@ -96,7 +95,7 @@ export class PageDrawer extends LitElement {
                 </tr>
                 <tr>
                   <td>effect</td>
-                  <td>The animation effect for opening and closing the drawer. Values include: (slide|reveal|push|scale|door)<div><em>String</em></div></td>
+                  <td>The animation effect for opening and closing the drawer. Values include: (slide|reveal|push|scale)<div><em>String</em></div></td>
                   <td>slide</td>
                 </tr>
                 <tr>
