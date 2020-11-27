@@ -34,7 +34,7 @@ export class KemetNav extends LitElement {
           position: fixed;
           top: 0;
           left: 0;
-          z-index: 0;
+          z-index: 999;
           overflow-y: auto;
           transition: transform 300ms ease;
         }
