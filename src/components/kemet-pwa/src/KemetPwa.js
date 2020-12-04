@@ -21,6 +21,7 @@ import '../../page-accordion/page-accordion.js';
 import '../../page-modal/page-modal.js';
 import '../../page-carousel/page-carousel.js';
 import '../../page-scrollsnap/page-scrollsnap.js';
+import '../../page-scrolllink/page-scrolllink.js';
 import '../../page-templates/page-templates.js';
 import '../../page-agency/page-agency.js';
 import '../../page-ecommerce/page-ecommerce.js';
@@ -94,6 +95,7 @@ export class KemetPwa extends LitElement {
         { path: '/modal', component: 'page-modal' },
         { path: '/carousel', component: 'page-carousel' },
         { path: '/scrollsnap', component: 'page-scrollsnap' },
+        { path: '/scrolllink', component: 'page-scrolllink' },
         { path: '/templates', component: 'page-templates' },
         { path: '/agency', component: 'page-agency' },
         { path: '/ecommerce', component: 'page-ecommerce'},
