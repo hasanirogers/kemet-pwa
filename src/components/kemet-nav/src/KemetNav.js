@@ -18,6 +18,10 @@ export class KemetNav extends LitElement {
 
       scaleContent: {
         type: Boolean
+      },
+
+      activeAccordion: {
+        type: String
       }
     };
   }
@@ -134,6 +138,7 @@ export class KemetNav extends LitElement {
     this.page = location.pathname === '/' ? 'introduction' : location.pathname.replace('/', '');
 
     document.addEventListener('switched-route', this.handleSwitchRoute.bind(this));
+    document.addEventListener('active-page-group', this.handleActivePageGroup.bind(this));
   }
 
   firstUpdated() {
@@ -148,68 +153,80 @@ export class KemetNav extends LitElement {
           <span>Kemet</span>
         </h1>
 
-        <h2>Styles</h2>
-        <ul>
-          <li class="${this.page === 'styles' ? 'active' : ''}">
-            <a @click=${() => { this.switchRoute('styles'); }}>About</a>
-          </li>
-          <li class="${this.page === 'layout' ? 'active' : ''}">
-            <a @click=${() => { this.switchRoute('layout'); }}>Layout</a>
-          </li>
-          <li class="${this.page === 'utilities' ? 'active' : ''}">
-            <a @click=${() => { this.switchRoute('utilities'); }}>Utilities</a>
-          </li>
-          <li class="${this.page === 'sass' ? 'active' : ''}">
-            <a @click=${() => { this.switchRoute('sass'); }}>Sass</a>
-          </li>
-        </ul>
+        <kemet-accordion ?opened=${this.activeAccordion === 'about'}>
+          <h2 slot="trigger">About</h2>
+          <ul slot="panel">
+            <li class="${this.page === 'styles' ? 'active' : ''}">
+              <a @click=${() => { this.switchRoute('styles'); }}>Styles</a>
+            </li>
+            <li class="${this.page === 'components' ? 'active' : ''}">
+              <a @click=${() => { this.switchRoute('components'); }}>Components</a>
+            </li>
+            <li class="${this.page === 'templates' ? 'active' : ''}">
+              <a @click=${() => { this.switchRoute('templates'); }}>Templates</a>
+            </li>
+          </ul>
+        </kemet-accordion>
 
-        <h2>Components</h2>
-        <ul>
-          <li class="${this.page === 'components' ? 'active' : ''}">
-            <a @click=${() => { this.switchRoute('components'); }}>About</a>
-          </li>
-          <li class="${this.page === 'drawer' ? 'active' : ''}">
-            <a @click=${() => { this.switchRoute('drawer'); }}>Drawer</a>
-          </li>
-          <li class="${this.page === 'tabs' ? 'active' : ''}">
-            <a @click=${() => { this.switchRoute('tabs'); }}>Tabs</a>
-          </li>
-          <li class="${this.page === 'accordion' ? 'active' : ''}">
-            <a @click=${() => { this.switchRoute('accordion'); }}>Accordion</a>
-          </li>
-          <li class="${this.page === 'modal' ? 'active' : ''}">
-            <a @click=${() => { this.switchRoute('modal'); }}>Modal</a>
-          </li>
-          <li class="${this.page === 'carousel' ? 'active' : ''}">
-            <a @click=${() => { this.switchRoute('carousel'); }}>Carousel</a>
-          </li>
-          <li class="${this.page === 'scrollsnap' ? 'active' : ''}">
-            <a @click=${() => { this.switchRoute('scrollsnap'); }}>Scroll Snap</a>
-          </li>
-          <li class="${this.page === 'scrolllink' ? 'active' : ''}">
-            <a @click=${() => { this.switchRoute('scrolllink'); }}>Scroll Link</a>
-          </li>
-        </ul>
+        <kemet-accordion ?opened=${this.activeAccordion === 'styles'}>
+          <h2 slot="trigger">Styles</h2>
+          <ul slot="panel">
+            <li class="${this.page === 'layout' ? 'active' : ''}">
+              <a @click=${() => { this.switchRoute('layout'); }}>Layout</a>
+            </li>
+            <li class="${this.page === 'utilities' ? 'active' : ''}">
+              <a @click=${() => { this.switchRoute('utilities'); }}>Utilities</a>
+            </li>
+            <li class="${this.page === 'sass' ? 'active' : ''}">
+              <a @click=${() => { this.switchRoute('sass'); }}>Sass</a>
+            </li>
+          </ul>
+        </kemet-accordion>
 
-        <h2>Templates</h2>
-        <ul>
-          <li class="${this.page === 'templates' ? 'active' : ''}">
-            <a @click=${() => { this.switchRoute('templates'); }}>About</a>
-          </li>
-          <li class="${this.page === 'agency' ? 'active' : ''}">
-            <a @click=${() => { this.switchRoute('agency'); }}>Agency</a>
-          </li>
-          <li class="${this.page === 'ecommerce' ? 'active' : ''}">
-            <a @click=${() => { this.switchRoute('ecommerce'); }}>Ecommerce</a>
-          </li>
-          <li class="${this.page === 'news' ? 'active' : ''}">
-            <a @click=${() => { this.switchRoute('news'); }}>News</a>
-          </li>
-          <li class="${this.page === 'travel' ? 'active' : ''}">
-            <a @click=${() => { this.switchRoute('travel'); }}>Travel</a>
-          </li>
-        </ul>
+        <kemet-accordion ?opened=${this.activeAccordion === 'components'}>
+          <h2 slot="trigger">Components</h2>
+          <ul slot="panel">
+            <li class="${this.page === 'drawer' ? 'active' : ''}">
+              <a @click=${() => { this.switchRoute('drawer'); }}>Drawer</a>
+            </li>
+            <li class="${this.page === 'tabs' ? 'active' : ''}">
+              <a @click=${() => { this.switchRoute('tabs'); }}>Tabs</a>
+            </li>
+            <li class="${this.page === 'accordion' ? 'active' : ''}">
+              <a @click=${() => { this.switchRoute('accordion'); }}>Accordion</a>
+            </li>
+            <li class="${this.page === 'modal' ? 'active' : ''}">
+              <a @click=${() => { this.switchRoute('modal'); }}>Modal</a>
+            </li>
+            <li class="${this.page === 'carousel' ? 'active' : ''}">
+              <a @click=${() => { this.switchRoute('carousel'); }}>Carousel</a>
+            </li>
+            <li class="${this.page === 'scrollsnap' ? 'active' : ''}">
+              <a @click=${() => { this.switchRoute('scrollsnap'); }}>Scroll Snap</a>
+            </li>
+            <li class="${this.page === 'scrolllink' ? 'active' : ''}">
+              <a @click=${() => { this.switchRoute('scrolllink'); }}>Scroll Link</a>
+            </li>
+          </ul>
+        </kemet-accordion>
+
+        <kemet-accordion ?opened=${this.activeAccordion === 'templates'}>
+          <h2 slot="trigger">Templates</h2>
+          <ul slot="panel">
+            <li class="${this.page === 'agency' ? 'active' : ''}">
+              <a @click=${() => { this.switchRoute('agency'); }}>Agency</a>
+            </li>
+            <li class="${this.page === 'ecommerce' ? 'active' : ''}">
+              <a @click=${() => { this.switchRoute('ecommerce'); }}>Ecommerce</a>
+            </li>
+            <li class="${this.page === 'news' ? 'active' : ''}">
+              <a @click=${() => { this.switchRoute('news'); }}>News</a>
+            </li>
+            <li class="${this.page === 'travel' ? 'active' : ''}">
+              <a @click=${() => { this.switchRoute('travel'); }}>Travel</a>
+            </li>
+          </ul>
+        </kemet-accordion>
       </section>
     `;
   }
@@ -222,5 +239,9 @@ export class KemetNav extends LitElement {
 
   handleSwitchRoute(event) {
     this.page = event.detail;
+  }
+
+  handleActivePageGroup(event) {
+    this.activeAccordion = event.detail;
   }
 }

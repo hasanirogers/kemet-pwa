@@ -1,5 +1,6 @@
 import { html, css, LitElement } from 'lit-element';
 import { stylesBase, stylesRSCSS } from '../../../assets/styles.js';
+import { identifyPageGroup } from '../../../utilities/identifyPageGroup.js';
 
 export class PageNews extends LitElement {
   static get styles() {
@@ -12,6 +13,10 @@ export class PageNews extends LitElement {
         }
     `
     ];
+  }
+
+  firstUpdated() {
+    identifyPageGroup('templates');
   }
 
   render() {

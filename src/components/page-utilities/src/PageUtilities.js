@@ -1,6 +1,7 @@
 import { html, css, LitElement } from 'lit-element';
 import { stylesBase } from '../../../assets/styles.js';
 import { versions } from '../../kemet-pwa/src/versions.js';
+import { identifyPageGroup } from '../../../utilities/identifyPageGroup.js';
 
 export class PageUtilities extends LitElement {
   static get styles() {
@@ -12,6 +13,10 @@ export class PageUtilities extends LitElement {
         }
     `
     ];
+  }
+
+  firstUpdated() {
+    identifyPageGroup('styles');
   }
 
   render() {

@@ -2,7 +2,7 @@
 import { html, css, LitElement } from 'lit-element';
 import { stylesBase, stylesRSCSS } from '../../../assets/styles.js';
 import { versions } from '../../kemet-pwa/src/versions.js';
-
+import { identifyPageGroup } from '../../../utilities/identifyPageGroup.js';
 import {
   snippetImport,
   snippetMarkup,
@@ -89,6 +89,8 @@ export class PageCarousel extends LitElement {
     this.addEventListener('kemet-carousel-change-finished', (event) => {
       this.currentSlide = event.detail.index + 1;
     });
+
+    identifyPageGroup('components');
   }
 
   render() {

@@ -2,6 +2,7 @@ import { html, css, LitElement } from 'lit-element';
 import { stylesBase } from '../../../assets/styles.js';
 import { sampleGutters, sampleFlexiplier, sampleBreakpoints } from './templateSamples.js';
 import { versions } from '../../kemet-pwa/src/versions.js';
+import { identifyPageGroup } from '../../../utilities/identifyPageGroup.js';
 
 export class PageSass extends LitElement {
   static get styles() {
@@ -19,6 +20,8 @@ export class PageSass extends LitElement {
     this.shadowRoot.querySelectorAll('pre code').forEach((block) => {
       window.hljs.highlightBlock(block);
     });
+
+    identifyPageGroup('styles');
   }
 
   render() {

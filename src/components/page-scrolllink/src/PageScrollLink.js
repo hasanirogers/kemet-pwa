@@ -1,7 +1,7 @@
 import { html, css, LitElement } from 'lit-element';
 import { stylesBase, stylesRSCSS } from '../../../assets/styles.js';
 import { versions } from '../../kemet-pwa/src/versions.js';
-
+import { identifyPageGroup } from '../../../utilities/identifyPageGroup.js';
 import { snippetMarkup, snippetJS } from './snippets.js';
 
 import '@kemet/kemet-scroll-link/kemet-scroll-link';
@@ -31,6 +31,8 @@ export class PageScrollLink extends LitElement {
     this.shadowRoot.querySelectorAll('pre code').forEach((block) => {
       window.hljs.highlightBlock(block);
     });
+
+    identifyPageGroup('components');
   }
 
   render() {
