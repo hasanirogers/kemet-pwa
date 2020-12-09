@@ -1,12 +1,12 @@
 import { html, css, LitElement } from 'lit-element';
 import { stylesBase, stylesRSCSS } from '../../../assets/styles.js';
 import { identifyPageGroup } from '../../../utilities/identifyPageGroup.js';
-import { snippetMarkup, snippetJS } from './snippets.js';
+import { snippetMarkup, snippetDemo } from './snippets.js';
 
-import '@kemet/kemet-scroll-link/kemet-scroll-link';
+import '@kemet/kemet-draggable/kemet-draggable.js';
 import '../../kemet-btn/kemet-btn.js';
 
-export class PageScrollLink extends LitElement {
+export class PageDraggable extends LitElement {
   static get styles() {
     return [
       stylesBase,
@@ -16,17 +16,15 @@ export class PageScrollLink extends LitElement {
           display: block;
         }
 
-        .extra-space {
-          min-height: 100vh;
+        #demo {
+          width: 360px;
+          height: 72px;
         }
     `
     ];
   }
 
   firstUpdated() {
-    const demoLink = this.shadowRoot.querySelector('kemet-scroll-link');
-    demoLink.target = this.shadowRoot.getElementById('demo');
-
     this.shadowRoot.querySelectorAll('pre code').forEach((block) => {
       window.hljs.highlightBlock(block);
     });
@@ -39,32 +37,30 @@ export class PageScrollLink extends LitElement {
       <link href="https://unpkg.com/@kemet/kemet-styles@latest/dist/kemet.components.css" rel="stylesheet" type="text/css">
       <link href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/styles/vs2015.min.css" rel="stylesheet" type="text/css"/>
       <article>
-        <h1>Scroll Link</h1>
+        <h1>Draggable</h1>
         <section>
           <h2>Installation</h2>
-          <p><code>npm install @kemet/kemet-scroll-link --save</code></p>
+          <p><code>npm install @kemet/kemet-draggable --save</code></p>
           <p>Once installed, you can run <code>npm start</code> to demo locally or <code>npm run storybook</code> for local docs.</p>
 
           <br><hr><br>
 
           <h2>Usage</h2>
-          <pre><code class="javascript">import '@kemet/kemet-scroll-link/kemet-scroll-link.js';</code></pre>
+          <pre><code class="javascript">import '@kemet/kemet-draggable/kemet-draggable.js';</code></pre>
           <h3>Markup</h3>
           <pre><code class="html">${snippetMarkup}</code></pre>
-          <h3>Javascript</h3>
-          <pre><code class="javascript">${snippetJS}</code></pre>
 
           <br><hr><br>
 
-          <h2 id="demo">Demo</h2>
-          <p class="extra-space">Scroll down and click the button to scroll back up.</p>
+          <h2>Demo</h2>
           <p>
-            <kemet-scroll-link>
-              <kemet-btn>
-                Scroll back to Demo heading.
+            <kemet-draggable measure memory="kemet-draggable-demo">
+              <kemet-btn id="demo">
+                  Drag me and I'll remember my position!
               </kemet-btn>
-            </kemet-scroll-link>
+            </kemet-draggable>
           </p>
+          <pre><code>${snippetDemo}</code></pre>
 
           <br><hr><br>
 
@@ -83,24 +79,35 @@ export class PageScrollLink extends LitElement {
                   <td colspan="3"><b>properties</b></td>
                 </tr>
                 <tr>
-                  <td>element</td>
-                  <td>A DOM element that establishes the context of scrolling.<div><em>Object</em></div></td>
-                  <td>window</td>
+                  <td>memory</td>
+                  <td>A unique identifier used to store the element's position in local storage.<div><em>String</em></div></td>
+                  <td>null</td>
                 </tr>
                 <tr>
-                  <td>target</td>
-                  <td>A DOM element that represents the destination of the scroll link.<div><em>Object</em></div></td>
-                  <td>body</td>
+                  <td>top</td>
+                  <td>The elements top position in pixels.<div><em>String</em></div></td>
+                  <td>auto</td>
                 </tr>
                 <tr>
-                  <td>xOffset</td>
-                  <td>Allows the horizontal scrolling to stop short of the given value.<div><em>Number</em></div></td>
-                  <td>0</td>
+                  <td>left</td>
+                  <td>The elements left position in pixels.<div><em>String</em></div></td>
+                  <td>auto</td>
                 </tr>
                 <tr>
-                  <td>yOffset</td>
-                  <td>Allows the vertical scrolling to stop short of the given value.<div><em>Number</em></div></td>
-                  <td>0</td>
+                  <td>measure</td>
+                  <td>If set to true, will measure the width and height of the element's content and apply it to the host element.<div><em>Boolean</em></div></td>
+                  <td>false</td>
+                </tr>
+                <tr>
+                  <td colspan="3"><b>events</b></td>
+                </tr>
+                <tr>
+                  <td>kemet-draggable-start</td>
+                  <td colspan="2">Fires when the user starts dragging the element.</td>
+                </tr>
+                <tr>
+                  <td>kemet-draggable-stop</td>
+                  <td colspan="2">Fires when the user stops dragging the element.</td>
                 </tr>
               </tbody>
             </table>

@@ -1,6 +1,6 @@
 import { html, css, LitElement } from 'lit-element';
 import { stylesBase } from '../../../assets/styles.js';
-import { versions } from '../../kemet-pwa/src/versions.js';
+import { identifyPageGroup } from '../../../utilities/identifyPageGroup.js';
 
 import {
   sampleFlexlayout1,
@@ -34,12 +34,14 @@ export class PageLayout extends LitElement {
     this.shadowRoot.querySelectorAll('pre code').forEach((block) => {
       window.hljs.highlightBlock(block);
     });
+
+    identifyPageGroup('styles');
   }
 
   render() {
     return html`
       <link href="https://unpkg.com/@kemet/kemet-styles@latest/dist/kemet.layout.css" rel="stylesheet" type="text/css">
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/${versions.highlightjs}/styles/vs2015.min.css" rel="stylesheet" type="text/css"/>
+      <link href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/styles/vs2015.min.css" rel="stylesheet" type="text/css"/>
       <article>
         <h1>Layout</h1>
         <section>

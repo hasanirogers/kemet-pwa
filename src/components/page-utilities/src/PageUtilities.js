@@ -1,6 +1,6 @@
 import { html, css, LitElement } from 'lit-element';
 import { stylesBase } from '../../../assets/styles.js';
-import { versions } from '../../kemet-pwa/src/versions.js';
+import { identifyPageGroup } from '../../../utilities/identifyPageGroup.js';
 
 export class PageUtilities extends LitElement {
   static get styles() {
@@ -14,14 +14,18 @@ export class PageUtilities extends LitElement {
     ];
   }
 
+  firstUpdated() {
+    identifyPageGroup('styles');
+  }
+
   render() {
     return html`
       <link href="https://unpkg.com/@kemet/kemet-styles@latest/dist/kemet.utilities.css" rel="stylesheet" type="text/css">
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/${versions.highlightjs}/styles/vs2015.min.css" rel="stylesheet" type="text/css"/>
+      <link href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/styles/vs2015.min.css" rel="stylesheet" type="text/css"/>
       <article>
         <section>
           <h2>Utility Classes</h2>
-          <p>Kemet comes with some utility classes that assist with structual styling.</p>
+          <p>Kemet comes with some utility classes that assist with structural styling.</p>
           <h3>Visibility</h3>
           <p>Visibility classes either show or hide elements at the given breakpoints. Showing an element means making a element that's hidden by default display. Hidding an element means making a element that's visible by default hide. You can also specify what breakpoint the element should show or hide. Visibility classes are the only styles in Kemet that are not mobile first.</p>
           <p>The syntax is <code>[show|hide]-[breakpoint]-[direction]</code>. So for example if you want to show an element at medium only you would write <code>show-medium</code>. If you wanted to hide an element on anything medium and bigger you would write <code>hide-medium-up</code>.</p>

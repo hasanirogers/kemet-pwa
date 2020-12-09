@@ -1,7 +1,7 @@
 /* eslint-disable class-methods-use-this */
 import { html, css, LitElement } from 'lit-element';
 import { stylesBase, stylesRSCSS } from '../../../assets/styles.js';
-import { versions } from '../../kemet-pwa/src/versions.js';
+import { identifyPageGroup } from '../../../utilities/identifyPageGroup.js';
 
 import {
   snippetImport,
@@ -60,12 +60,14 @@ export class PageModal extends LitElement {
 
     this.handleContentOnOpen();
     this.handleContentOnClose();
+
+    identifyPageGroup('components');
   }
 
   render() {
     return html`
       <link href="https://unpkg.com/@kemet/kemet-styles@latest/dist/kemet.components.css" rel="stylesheet" type="text/css">
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/${versions.highlightjs}/styles/vs2015.min.css" rel="stylesheet" type="text/css"/>
+      <link href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/styles/vs2015.min.css" rel="stylesheet" type="text/css"/>
       <article class="${this.blurContent ? '-blur' : ''} ${this.scaleContent ? '-scale' : ''}">
         <h1>Modal</h1>
         <section>
