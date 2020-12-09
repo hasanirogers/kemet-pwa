@@ -207,6 +207,9 @@ export class KemetNav extends LitElement {
             <li class="${this.page === 'scrolllink' ? 'active' : ''}">
               <a @click=${() => { this.switchRoute('scrolllink'); }}>Scroll Link</a>
             </li>
+            <li class="${this.page === 'draggable' ? 'active' : ''}">
+              <a @click=${() => { this.switchRoute('draggable'); }}>Draggable</a>
+            </li>
           </ul>
         </kemet-accordion>
 

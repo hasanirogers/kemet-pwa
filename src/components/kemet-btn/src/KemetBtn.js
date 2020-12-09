@@ -19,18 +19,25 @@ export class KemetBtn extends LitElement {
     return [
       stylesBase,
       css`
-        a {
-          position: relative;
+        :host {
           display: inline-block;
-          padding: 1rem;
-          text-decoration: none;
-          color: var(--app-white-rich) !important;
           background: var(--app-primary-color);
           transition: filter 300ms ease, color 300ms ease;
         }
 
-        a:hover {
+        :host(:hover) {
           filter: brightness(150%);
+        }
+
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 1rem;
+          width: 100%;
+          height: 100%;
+          text-decoration: none;
+          color: var(--app-white-rich) !important;
         }
       `,
     ];
