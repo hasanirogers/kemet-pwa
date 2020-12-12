@@ -210,6 +210,9 @@ export class KemetNav extends LitElement {
             <li class="${this.page === 'draggable' ? 'active' : ''}">
               <a @click=${() => { this.switchRoute('draggable'); }}>Draggable</a>
             </li>
+            <li class="${this.page === 'flipcard' ? 'active' : ''}">
+              <a @click=${() => { this.switchRoute('flipcard'); }}>Flipcard</a>
+            </li>
           </ul>
         </kemet-accordion>
 
