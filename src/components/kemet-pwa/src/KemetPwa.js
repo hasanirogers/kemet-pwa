@@ -9,11 +9,13 @@ import '@kemet/kemet-drawer/kemet-drawer';
 
 import '../../kemet-nav/kemet-nav.js';
 import '../../kemet-btn/kemet-btn.js';
+
 import '../../page-intro/page-intro.js';
 import '../../page-styles/page-styles.js';
 import '../../page-layout/page-layout.js';
 import '../../page-utilities/page-utilities.js';
 import '../../page-sass/page-sass.js';
+
 import '../../page-components/page-components.js';
 import '../../page-drawer/page-drawer.js';
 import '../../page-tabs/page-tabs.js';
@@ -24,6 +26,8 @@ import '../../page-scrollsnap/page-scrollsnap.js';
 import '../../page-scrolllink/page-scrolllink.js';
 import '../../page-draggable/page-draggable.js';
 import '../../page-flipcard/page-flipcard.js';
+import '../../page-rotator/page-rotator.js';
+
 import '../../page-templates/page-templates.js';
 import '../../page-agency/page-agency.js';
 import '../../page-ecommerce/page-ecommerce.js';
@@ -100,6 +104,7 @@ export class KemetPwa extends LitElement {
         { path: '/scrolllink', component: 'page-scrolllink' },
         { path: '/draggable', component: 'page-draggable' },
         { path: '/flipcard', component: 'page-flipcard' },
+        { path: '/rotator', component: 'page-rotator' },
         { path: '/templates', component: 'page-templates' },
         { path: '/agency', component: 'page-agency' },
         { path: '/ecommerce', component: 'page-ecommerce'},

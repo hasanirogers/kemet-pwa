@@ -51,9 +51,8 @@ export class PageFlipcard extends LitElement {
 
   render() {
     return html`
-      <link href="https://unpkg.com/@kemet/kemet-styles@latest/dist/kemet.components.css" rel="stylesheet" type="text/css">
       <link href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/styles/vs2015.min.css" rel="stylesheet" type="text/css"/>
-      <article class="${this.blurContent ? '-blur' : ''} ${this.scaleContent ? '-scale' : ''}">
+      <article>
         <h1>Flipcard</h1>
         <section>
           <h2>Installation</h2>
