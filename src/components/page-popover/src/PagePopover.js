@@ -3,7 +3,7 @@ import { stylesBase, stylesRSCSS } from '../../../assets/styles.js';
 import { identifyPageGroup } from '../../../utilities/identifyPageGroup.js';
 import { snippetMarkup } from './snippets.js';
 
-import '../../kemet-btn/kemet-btn.js';
+import '../../kemet-radio/kemet-radio.js';
 
 export class PagePopover extends LitElement {
   static get styles() {
@@ -60,7 +60,7 @@ export class PagePopover extends LitElement {
           <br><hr><br>
 
           <h2>Demo</h2>
-          <p>Select an effect and a side then click the open drawer button below.</p>
+          <p>Select an effect, position, and fire on event. This will configure how all demo popovers behave.</p>
           <form>
             <div class="property-select">
               <label>
@@ -87,13 +87,10 @@ export class PagePopover extends LitElement {
               </label>
             </div>
             <p>
-              Fire On:&nbsp;
-              <label>
-                <input type="radio" name="fire-on" value="click" @change=${(event) => this.handleFireOn(event)} />Click
-              </label>
-              <label>
-                <input type="radio" name="fire-on" value="hover" @change=${(event) => this.handleFireOn(event)} checked />Hover
-              </label>
+              Fire On:&nbsp;&nbsp;
+              <kemet-radio name="fire-on-click" value="click" @change=${(event) => this.handleFireOn(event)}>Click</kemet-radio>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <kemet-radio name="fire-on-hover" value="hover" @change=${(event) => this.handleFireOn(event)} checked>Hover</kemet-radio>
             </p>
           </form>
 
