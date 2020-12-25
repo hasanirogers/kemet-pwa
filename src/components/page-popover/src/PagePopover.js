@@ -1,8 +1,14 @@
 import { html, css, LitElement } from 'lit-element';
 import { stylesBase, stylesRSCSS } from '../../../assets/styles.js';
 import { identifyPageGroup } from '../../../utilities/identifyPageGroup.js';
-import { snippetMarkup } from './snippets.js';
+import {
+  snippetMarkup,
+  snippetPopover,
+  snippetTooltip,
+  snippetCustomTooltip,
+} from './snippets.js';
 
+import '@kemet/kemet-popover/kemet-popover';
 import '../../kemet-radio/kemet-radio.js';
 
 export class PagePopover extends LitElement {
@@ -25,12 +31,92 @@ export class PagePopover extends LitElement {
           gap: 2rem;
           grid-template-columns: 1fr 1fr;
         }
+
+        .popovers {
+          display: flex;
+          margin-top: 4rem;
+          justify-content: space-around;
+        }
+
+        .popovers > div {
+          text-align: center;
+        }
+
+        .code-display {
+          margin-top: 2rem;
+        }
+
+        .code-display > * {
+          display: none;
+        }
+
+        .code-display > .show {
+          display: block;
+        }
+
+        kemet-popover {
+          display: block;
+        }
+
+        [tooltip] {
+          --kemet-popover-gap: 1rem;
+        }
+
+        [custom-tooltip] {
+          --kemet-popover-gap: 1rem;
+        }
+
+        [custom-tooltip] [slot="content"] {
+          color: rgba(36,49,56,1);
+          background-color: #fafafa;
+          border: 3px solid rgba(36,49,56,1);
+        }
+
+        [custom-tooltip][position="top"] svg,
+        [custom-tooltip][position="bottom"] svg,
+        [custom-tooltip][position="left"] svg,
+        [custom-tooltip][position="right"] svg {
+          position: relative;
+        }
+
+        [custom-tooltip][position="top"] svg {
+          top: -3px;
+        }
+
+        [custom-tooltip][position="right"] svg {
+          right: -10px;
+          transform: rotate(90deg);
+        }
+
+        [custom-tooltip][position="bottom"] svg {
+          top: 3px;
+          transform: rotate(180deg);
+        }
+
+        [custom-tooltip][position="left"] svg {
+          transform: rotate(270deg);
+          right: 10px;
+        }
+
+        @media only screen and (min-width: 640px) {
+          kemet-popover {
+            --kemet-popover-width: 200%;
+          }
+        }
     `
     ];
   }
 
+  static get properties() {
+    return {
+      codeDisplay: {
+        type: String
+      }
+    }
+  }
+
   firstUpdated() {
-    this.popovers = this.shadowRoot.querySelectorAll('popover');
+    this.popovers = this.shadowRoot.querySelectorAll('kemet-popover');
 
     this.shadowRoot.querySelectorAll('pre code').forEach((block) => {
       window.hljs.highlightBlock(block);
@@ -60,38 +146,81 @@ export class PagePopover extends LitElement {
           <br><hr><br>
 
           <h2>Demo</h2>
-          <p>Select an effect, position, and fire on event. This will configure how all demo popovers behave.</p>
+          <p>Select an effect, position, and fire on event. This will configure how all demo popovers behave. Then hover or click the "activate" trigger.</p>
           <form>
             <div class="property-select">
               <label>
-                Effect:
+                Effect:&nbsp;&nbsp;
                 <div class="select-box">
                   <select class="select" @change=${(event) => this.updateEffect(event)}>
+                    <option value="none" selected>None</option>
+                    <option value="fade">Fade</option>
+                    <option value="scale">Scale</option>
                     <option value="slide">Slide</option>
-                    <option value="reveal">Reveal</option>
-                    <option value="push">Push</option>
-                    <option value="scale" selected>Scale</option>
+                    <option value="fall">Fall</option>
+                    <option value="flip-horizontal">Flip Horizontal</option>
+                    <option value="flip-vertical">Flip Vertical</option>
+                    <option value="sign">Sign</option>
+                    <option value="super-scaled">Super Scaled</option>
                   </select>
                 </div>
               </label>
               <label>
-                Position:
+                Position:&nbsp;&nbsp;
                 <div class="select-box">
-                  <select class="select" @change=${(event) => this.updateSide(event)}>
-                    <option value="left">Left</option>
-                    <option value="top">Top</option>
+                  <select class="select" @change=${(event) => this.updatePosition(event)}>
+                    <option value="top" selected>Top</option>
                     <option value="right">Right</option>
                     <option value="bottom">Bottom</option>
+                    <option value="left">Left</option>
                   </select>
                 </div>
               </label>
             </div>
             <p>
               Fire On:&nbsp;&nbsp;
-              <kemet-radio name="fire-on-click" value="click" @change=${(event) => this.handleFireOn(event)}>Click</kemet-radio>
+              <kemet-radio name="fire-on-click" value="click" @change=${(event) => this.handleFireOn(event)}>
+                Click
+              </kemet-radio>
               &nbsp;&nbsp;&nbsp;&nbsp;
-              <kemet-radio name="fire-on-hover" value="hover" @change=${(event) => this.handleFireOn(event)} checked>Hover</kemet-radio>
+              <kemet-radio name="fire-on-hover" value="hover" @change=${(event) => this.handleFireOn(event)} checked>
+                Hover
+            </kemet-radio>
             </p>
+            <section class="popovers">
+              <div>
+                <kemet-popover>
+                  <strong slot="trigger">Activate Popover</strong>
+                  <span slot="content">This is a popover. Lets add some extra text in here and see what happens.</span>
+                </kemet-popover>
+                <a @click=${() => this.codeDisplay = 'popover'}>Show Code</a>
+              </div>
+              <div>
+                <kemet-popover tooltip>
+                  <strong slot="trigger">Activate Tooltip</strong>
+                  <span slot="content">This is a tooltip. Lets add some extra text in here and see what happens.</span>
+                </kemet-popover>
+                <a @click=${() => this.codeDisplay = 'tooltip'}>Show Code</a>
+              </div>
+              <div>
+              <kemet-popover custom-tooltip>
+                <strong slot="trigger">Activate Custom Tooltip</strong>:
+                <span slot="content">This is a custom tooltip. Here's a <a href="http://kemet.online" target="_blank">random link</a> to help test it out.</span>
+                <span slot="custom-tooltip">
+                  <svg width="32" height="18" viewBox="0 0 1366.99 767.67">
+                    <polyline points="0.74 0.67 685.25 766.17 1366.24 0.67" style="fill:#fafafa; stroke:rgba(36,49,56,1); stroke-width:100px"/>
+                  </svg>
+                </span>
+              </kemet-popover>
+              <a @click=${() => this.codeDisplay = 'custom-tooltip'}>Show Code</a>
+              </div>
+            </section>
+            <section class="code-display">
+              <pre class="${this.codeDisplay === 'popover' ? 'show' : ''}"><code>${snippetPopover}</code></pre>
+              <pre class="${this.codeDisplay === 'tooltip' ? 'show' : ''}"><code>${snippetTooltip}</code></pre>
+              <pre class="${this.codeDisplay === 'custom-tooltip' ? 'show' : ''}"><code>${snippetCustomTooltip}</code></pre>
+            </section>
+            <p><strong>A note about styles:</strong> Remember to add a <code>--kemet-popover-gap</code> if you're using <code>tooltip</code> as the gap's default is 0px. Also, you are responsible for transforming the position and rotation of your custom tooltip. Kemet is designless and makes no assumptions about how you want your custom tooltip to appear. Design as you please.</p>
           </form>
 
           <br><hr><br>
@@ -253,7 +382,7 @@ export class PagePopover extends LitElement {
     });
   }
 
-  updateSide(event) {
+  updatePosition(event) {
     this.popovers.forEach((popover) => {
       popover.position = event.target.value;
     });

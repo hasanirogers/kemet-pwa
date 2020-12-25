@@ -21,6 +21,7 @@
     "@kemet/kemet-drawer": "^1.3.0",
     "@kemet/kemet-flipcard": "^1.0.0",
     "@kemet/kemet-modal": "^1.0.1",
+    "@kemet/kemet-popover": "^1.0.0",
     "@kemet/kemet-rotator": "^1.0.0",
     "@kemet/kemet-scroll-link": "^1.0.0",
     "@kemet/kemet-scroll-snap": "^1.1.3",
