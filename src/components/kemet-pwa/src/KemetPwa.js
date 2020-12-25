@@ -28,6 +28,7 @@ import '../../page-draggable/page-draggable.js';
 import '../../page-flipcard/page-flipcard.js';
 import '../../page-rotator/page-rotator.js';
 import '../../page-popover/page-popover.js';
+import '../../page-ratio/page-ratio.js';
 
 import '../../page-templates/page-templates.js';
 import '../../page-agency/page-agency.js';
@@ -107,6 +108,7 @@ export class KemetPwa extends LitElement {
         { path: '/flipcard', component: 'page-flipcard' },
         { path: '/rotator', component: 'page-rotator' },
         { path: '/popover', component: 'page-popover' },
+        { path: '/ratio', component: 'page-ratio' },
         { path: '/templates', component: 'page-templates' },
         { path: '/agency', component: 'page-agency' },
         { path: '/ecommerce', component: 'page-ecommerce'},

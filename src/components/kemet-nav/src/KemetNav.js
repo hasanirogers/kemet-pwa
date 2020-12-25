@@ -219,6 +219,9 @@ export class KemetNav extends LitElement {
             <li class="${this.page === 'popover' ? 'active' : ''}">
               <a @click=${() => { this.switchRoute('popover'); }}>Popover</a>
             </li>
+            <li class="${this.page === 'ratio' ? 'active' : ''}">
+              <a @click=${() => { this.switchRoute('ratio'); }}>Ratio</a>
+            </li>
           </ul>
         </kemet-accordion>
 

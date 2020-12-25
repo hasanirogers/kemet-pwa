@@ -226,6 +226,7 @@ export class PagePopover extends LitElement {
           <br><hr><br>
 
           <h2>API</h2>
+          <h3>&lt;kemet-popover&gt;</h3>
           <div class="_responsivetable">
             <table>
               <thead>
