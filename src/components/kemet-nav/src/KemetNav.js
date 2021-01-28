@@ -222,6 +222,9 @@ export class KemetNav extends LitElement {
             <li class="${this.page === 'ratio' ? 'active' : ''}">
               <a @click=${() => { this.switchRoute('ratio'); }}>Ratio</a>
             </li>
+            <li class="${this.page === 'scrollnav' ? 'active' : ''}">
+              <a @click=${() => { this.switchRoute('scrollnav'); }}>Scroll Nav</a>
+            </li>
           </ul>
         </kemet-accordion>
 
