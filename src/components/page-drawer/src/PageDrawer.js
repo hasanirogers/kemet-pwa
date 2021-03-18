@@ -132,10 +132,6 @@ export class PageDrawer extends LitElement {
                   <td colspan="2">Fires when the drawer closes.</td>
                 </tr>
                 <tr>
-                  <td>kemet-drawer-toggle</td>
-                  <td colspan="2">Fires when the drawer toggles.</td>
-                </tr>
-                <tr>
                   <td colspan="3"><b>methods</b></td>
                 </tr>
                 <tr>
